@@ -1,6 +1,13 @@
 package models;
-//
-public class Coin {
+
+//import java.util.*;
+import javax.persistence.*;
+
+import io.ebean.*;
+import play.data.format.*;
+import play.data.validation.*;
+
+public class Coins extends Model {
 //
 //    private String name;
 //    private double value;

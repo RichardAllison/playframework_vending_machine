@@ -7,9 +7,15 @@ GET     /                               controllers.HomeController.index
 
 GET     /service                        controllers.ServiceController.index()
 
-# Items list (look at the default values for pagination parameters)
+# Items list
 GET     /service/items                  controllers.ItemController.index()
 
+
+# Add item
+GET     /service/items/new              controllers.ItemController.newItem()
+POST    /service/items                  controllers.ItemController.save()
+
+# Edit item
 
 
 # Map static resources from the /public folder to the /assets URL path

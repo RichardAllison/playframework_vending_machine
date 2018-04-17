@@ -1,6 +1,6 @@
 package models;
 
-import java.util.*;
+//import java.util.*;
 import javax.persistence.*;
 
 import io.ebean.*;
@@ -12,19 +12,43 @@ import play.data.validation.*;
 public class VendingItem extends Model {
 
     @Id
-    public Long id;
-
+    protected Long id;
+    @Constraints.Required(message = "Name is required")
+    protected String name;
     @Constraints.Required
-    public String name;
-
+    protected double price;
     @Constraints.Required
-    public double price;
-
-    @Constraints.Required
-    public int quantity;
+    protected int quantity;
 
     public static final Finder<Long, VendingItem> find = new Finder<>(VendingItem.class);
 
+    public long getId() {
+        return this.id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public double getPrice() {
+        return this.price;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public int getQuantity() {
+        return this.quantity;
+    }
 
 }
 

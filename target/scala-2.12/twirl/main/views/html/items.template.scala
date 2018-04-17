@@ -33,23 +33,26 @@ object items extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.Html
 Seq[Any](format.raw/*1.38*/("""
 
 """),_display_(/*3.2*/main("Service Vending Machine")/*3.33*/ {_display_(Seq[Any](format.raw/*3.35*/("""
+    """),format.raw/*4.5*/("""<p><a href="/service/items/new">Add Item</a></p>
 
-    """),format.raw/*5.5*/("""<table id='items_list' class="table">
+    <table id='items_list' class="table">
 
         <thead>
         <tr>
             <th>Name</th>
             <th>Price</th>
+            <th>Actions</th>
         </tr>
         </thead>
         <tbody>
-        """),_display_(/*14.10*/for(item <- items) yield /*14.28*/ {_display_(Seq[Any](format.raw/*14.30*/("""
-        """),format.raw/*15.9*/("""<tr>
-            <td>"""),_display_(/*16.18*/item/*16.22*/.name),format.raw/*16.27*/("""</td>
-            <td>"""),_display_(/*17.18*/item/*17.22*/.price),format.raw/*17.28*/("""</td>
+        """),_display_(/*16.10*/for(item <- items) yield /*16.28*/ {_display_(Seq[Any](format.raw/*16.30*/("""
+        """),format.raw/*17.9*/("""<tr>
+            <td>"""),_display_(/*18.18*/item/*18.22*/.getName),format.raw/*18.30*/("""</td>
+            <td>"""),_display_(/*19.18*/item/*19.22*/.getPrice),format.raw/*19.31*/("""</td>
+            <td><a href="/service/items/"""),_display_(/*20.42*/item/*20.46*/.getId),format.raw/*20.52*/("""">edit</a> | <a href="/service/items/"""),_display_(/*20.90*/item/*20.94*/.getId),format.raw/*20.100*/("""/delete">delete</a></td>
         </tr>
-        """)))}),format.raw/*19.10*/("""
-        """),format.raw/*20.9*/("""</tbody>
+        """)))}),format.raw/*22.10*/("""
+        """),format.raw/*23.9*/("""</tbody>
     </table>
 """)))}))
       }
@@ -67,11 +70,11 @@ Seq[Any](format.raw/*1.38*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Tue Apr 17 11:22:55 GMT 2018
+                  DATE: Tue Apr 17 14:07:54 GMT 2018
                   SOURCE: /mnt/c/Users/Richard/Desktop/Java Web App/play-project/vendingmachine/app/views/items.scala.html
-                  HASH: a857c77aa4091e94f91aa0317094cf2ce943e9d8
-                  MATRIX: 969->1|1100->37|1130->42|1169->73|1208->75|1242->83|1455->269|1489->287|1529->289|1566->299|1616->322|1629->326|1655->331|1706->355|1719->359|1746->365|1808->396|1845->406
-                  LINES: 28->1|33->1|35->3|35->3|35->3|37->5|46->14|46->14|46->14|47->15|48->16|48->16|48->16|49->17|49->17|49->17|51->19|52->20
+                  HASH: 06e7af272e662c1e56559d408adc68f2a8ee143b
+                  MATRIX: 969->1|1100->37|1130->42|1169->73|1208->75|1240->81|1539->353|1573->371|1613->373|1650->383|1700->406|1713->410|1742->418|1793->442|1806->446|1836->455|1911->503|1924->507|1951->513|2016->551|2029->555|2057->561|2138->611|2175->621
+                  LINES: 28->1|33->1|35->3|35->3|35->3|36->4|48->16|48->16|48->16|49->17|50->18|50->18|50->18|51->19|51->19|51->19|52->20|52->20|52->20|52->20|52->20|52->20|54->22|55->23
                   -- GENERATED --
               */
           

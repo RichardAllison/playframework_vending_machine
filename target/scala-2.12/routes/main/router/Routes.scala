@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/mnt/c/Users/Richard/Desktop/Java Web App/play-project/vendingmachine/conf/routes
-// @DATE:Tue Apr 17 11:50:11 GMT 2018
+// @DATE:Tue Apr 17 14:04:27 GMT 2018
 
 package router
 
@@ -20,7 +20,7 @@ class Routes(
   ServiceController_0: controllers.ServiceController,
   // @LINE:11
   ItemController_3: controllers.ItemController,
-  // @LINE:16
+  // @LINE:22
   Assets_2: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -33,7 +33,7 @@ class Routes(
     ServiceController_0: controllers.ServiceController,
     // @LINE:11
     ItemController_3: controllers.ItemController,
-    // @LINE:16
+    // @LINE:22
     Assets_2: controllers.Assets
   ) = this(errorHandler, HomeController_1, ServiceController_0, ItemController_3, Assets_2, "/")
 
@@ -50,6 +50,8 @@ class Routes(
     ("""GET""", this.prefix, """controllers.HomeController.index"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """service""", """controllers.ServiceController.index()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """service/items""", """controllers.ItemController.index()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """service/items/new""", """controllers.ItemController.newItem()"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """service/items""", """controllers.ItemController.save()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -107,16 +109,52 @@ class Routes(
       Nil,
       "GET",
       this.prefix + """service/items""",
-      """ Items list (look at the default values for pagination parameters)""",
+      """ Items list""",
+      Seq()
+    )
+  )
+
+  // @LINE:15
+  private[this] lazy val controllers_ItemController_newItem3_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("service/items/new")))
+  )
+  private[this] lazy val controllers_ItemController_newItem3_invoker = createInvoker(
+    ItemController_3.newItem(),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.ItemController",
+      "newItem",
+      Nil,
+      "GET",
+      this.prefix + """service/items/new""",
+      """ Add item""",
       Seq()
     )
   )
 
   // @LINE:16
-  private[this] lazy val controllers_Assets_versioned3_route = Route("GET",
+  private[this] lazy val controllers_ItemController_save4_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("service/items")))
+  )
+  private[this] lazy val controllers_ItemController_save4_invoker = createInvoker(
+    ItemController_3.save(),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.ItemController",
+      "save",
+      Nil,
+      "POST",
+      this.prefix + """service/items""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:22
+  private[this] lazy val controllers_Assets_versioned5_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned3_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned5_invoker = createInvoker(
     Assets_2.versioned(fakeValue[String], fakeValue[Asset]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -151,10 +189,22 @@ class Routes(
         controllers_ItemController_index2_invoker.call(ItemController_3.index())
       }
   
+    // @LINE:15
+    case controllers_ItemController_newItem3_route(params@_) =>
+      call { 
+        controllers_ItemController_newItem3_invoker.call(ItemController_3.newItem())
+      }
+  
     // @LINE:16
-    case controllers_Assets_versioned3_route(params@_) =>
+    case controllers_ItemController_save4_route(params@_) =>
+      call { 
+        controllers_ItemController_save4_invoker.call(ItemController_3.save())
+      }
+  
+    // @LINE:22
+    case controllers_Assets_versioned5_route(params@_) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned3_invoker.call(Assets_2.versioned(path, file))
+        controllers_Assets_versioned5_invoker.call(Assets_2.versioned(path, file))
       }
   }
 }

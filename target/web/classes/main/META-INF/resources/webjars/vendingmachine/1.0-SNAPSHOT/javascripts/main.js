@@ -36,9 +36,7 @@ const populateVendingMachine = function(){
 //  submit.setAttribute('name', 'select-item-submit');
 //  submit.id = 'select-item-submit';
 //  submit.value = 'Select'
-  submit.addEventListener('click', function(){
-    onItemSelectButtonClicked(event, items);
-  });
+  submit.addEventListener('click', onItemSelectButtonClicked);
 //  vendingItemsForm.appendChild(submit);
 };
 
@@ -55,7 +53,7 @@ const onCoinSelected = function(event){
   // localStorage.setItem('moneyPaid', jsonString);
 };
 
-const onItemSelectButtonClicked = function(event, items){
+const onItemSelectButtonClicked = function(event){
   event.preventDefault();
 
   if (checkNoItemSelected()) {

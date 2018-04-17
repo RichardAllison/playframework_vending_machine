@@ -1,6 +1,7 @@
 @(items: java.util.List[VendingItem])
 
 @main("Service Vending Machine") {
+    <p><a href="/service/items/new">Add Item</a></p>
 
     <table id='items_list' class="table">
 
@@ -8,13 +9,15 @@
         <tr>
             <th>Name</th>
             <th>Price</th>
+            <th>Actions</th>
         </tr>
         </thead>
         <tbody>
         @for(item <- items) {
         <tr>
-            <td>@item.name</td>
-            <td>@item.price</td>
+            <td>@item.getName</td>
+            <td>@item.getPrice</td>
+            <td><a href="/service/items/@item.getId">edit</a> | <a href="/service/items/@item.getId/delete">delete</a></td>
         </tr>
         }
         </tbody>

@@ -1,0 +1,16 @@
+@(form: Form[VendingItem])
+
+@import play.data.Form
+
+@main("Vending Machine") {
+
+    @helper.form(action = routes.ItemController.save(), 'id -> "item_form") {
+
+        @helper.inputText(form("name"), '_id -> "name", '_label -> "Name:")
+        @helper.inputText(form("price"), '_id -> "price", '_label -> "Price:")
+        @helper.inputText(form("quantity"), '_id -> "quantity", '_label -> "Quantity:")
+
+        <input type="submit" id="submit" name="submit" value="Add"/>
+    }
+
+}
