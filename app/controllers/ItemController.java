@@ -37,9 +37,24 @@ public class ItemController extends Controller {
         item.save();
         return index();
     }
-//
-//    public void edit(long id) {}
-//    public void update(long id) {}
+
+    public Result edit(long id) {
+        VendingItem item = VendingItem.find.byId(id);
+        Form<VendingItem> itemForm = formFactory.form(VendingItem.class);
+        return ok(views.html.editItem.render(id, item, itemForm));
+    }
+
+    public Result update(long id) {
+        VendingItem item = VendingItem.find.byId(id);
+        Form<VendingItem> itemForm = formFactory.form(VendingItem.class).bindFromRequest();
+        if (itemForm.hasErrors()) {
+            return badRequest(views.html.newItem.render(itemForm));
+        }
+        VendingItem updatedItem = itemForm.get();
+        updatedItem.setId(id);
+        updatedItem.update();
+        return index();
+    }
 
     public Result delete(Long id) {
         VendingItem item = VendingItem.find.byId(id);

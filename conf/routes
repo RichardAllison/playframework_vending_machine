@@ -17,6 +17,9 @@ GET     /service/items/new              controllers.ItemController.newItem()
 POST    /service/items                  controllers.ItemController.save()
 
 # Edit item
+GET     /service/items/:id              controllers.ItemController.edit(id:Long)
++ nocsrf
+POST    /service/items/:id              controllers.ItemController.update(id:Long)
 
 # Delete item
 + nocsrf

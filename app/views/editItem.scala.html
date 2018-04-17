@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+@(id: Long, item: VendingItem, form: Form[VendingItem])
 
-</body>
-</html>
+@import play.data.Form
+
+@main("Vending Machine") {
+
+    @helper.form(action = routes.ItemController.update(id), 'id -> "item_form") {
+
+        @helper.inputText(form("name"), '_id -> "name", '_label -> "Name:")
+        @helper.inputText(form("price"), '_id -> "price", '_label -> "Price:")
+        @helper.inputText(form("quantity"), '_id -> "quantity", '_label -> "Quantity:")
+
+        <input type="submit" id="submit" name="submit" value="Update"/>
+    }
+
+}

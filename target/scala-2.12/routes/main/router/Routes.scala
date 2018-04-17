@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/mnt/c/Users/Richard/Desktop/Java Web App/play-project/vendingmachine/conf/routes
-// @DATE:Tue Apr 17 15:38:48 GMT 2018
+// @DATE:Tue Apr 17 16:21:13 GMT 2018
 
 package router
 
@@ -20,7 +20,7 @@ class Routes(
   ServiceController_0: controllers.ServiceController,
   // @LINE:11
   ItemController_3: controllers.ItemController,
-  // @LINE:27
+  // @LINE:30
   Assets_2: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -33,7 +33,7 @@ class Routes(
     ServiceController_0: controllers.ServiceController,
     // @LINE:11
     ItemController_3: controllers.ItemController,
-    // @LINE:27
+    // @LINE:30
     Assets_2: controllers.Assets
   ) = this(errorHandler, HomeController_1, ServiceController_0, ItemController_3, Assets_2, "/")
 
@@ -52,6 +52,8 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """service/items""", """controllers.ItemController.index()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """service/items/new""", """controllers.ItemController.newItem()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """service/items""", """controllers.ItemController.save()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """service/items/""" + "$" + """id<[^/]+>""", """controllers.ItemController.edit(id:Long)"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """service/items/""" + "$" + """id<[^/]+>""", """controllers.ItemController.update(id:Long)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """service/items/""" + "$" + """id<[^/]+>/delete""", """controllers.ItemController.delete(id:Long)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     Nil
@@ -151,11 +153,47 @@ class Routes(
     )
   )
 
-  // @LINE:23
-  private[this] lazy val controllers_ItemController_delete5_route = Route("POST",
+  // @LINE:20
+  private[this] lazy val controllers_ItemController_edit5_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("service/items/"), DynamicPart("id", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_ItemController_edit5_invoker = createInvoker(
+    ItemController_3.edit(fakeValue[Long]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.ItemController",
+      "edit",
+      Seq(classOf[Long]),
+      "GET",
+      this.prefix + """service/items/""" + "$" + """id<[^/]+>""",
+      """ Edit item""",
+      Seq()
+    )
+  )
+
+  // @LINE:22
+  private[this] lazy val controllers_ItemController_update6_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("service/items/"), DynamicPart("id", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_ItemController_update6_invoker = createInvoker(
+    ItemController_3.update(fakeValue[Long]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.ItemController",
+      "update",
+      Seq(classOf[Long]),
+      "POST",
+      this.prefix + """service/items/""" + "$" + """id<[^/]+>""",
+      """""",
+      Seq("""nocsrf""")
+    )
+  )
+
+  // @LINE:26
+  private[this] lazy val controllers_ItemController_delete7_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("service/items/"), DynamicPart("id", """[^/]+""",true), StaticPart("/delete")))
   )
-  private[this] lazy val controllers_ItemController_delete5_invoker = createInvoker(
+  private[this] lazy val controllers_ItemController_delete7_invoker = createInvoker(
     ItemController_3.delete(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -169,11 +207,11 @@ class Routes(
     )
   )
 
-  // @LINE:27
-  private[this] lazy val controllers_Assets_versioned6_route = Route("GET",
+  // @LINE:30
+  private[this] lazy val controllers_Assets_versioned8_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned6_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned8_invoker = createInvoker(
     Assets_2.versioned(fakeValue[String], fakeValue[Asset]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -220,16 +258,28 @@ class Routes(
         controllers_ItemController_save4_invoker.call(ItemController_3.save())
       }
   
-    // @LINE:23
-    case controllers_ItemController_delete5_route(params@_) =>
+    // @LINE:20
+    case controllers_ItemController_edit5_route(params@_) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_ItemController_delete5_invoker.call(ItemController_3.delete(id))
+        controllers_ItemController_edit5_invoker.call(ItemController_3.edit(id))
       }
   
-    // @LINE:27
-    case controllers_Assets_versioned6_route(params@_) =>
+    // @LINE:22
+    case controllers_ItemController_update6_route(params@_) =>
+      call(params.fromPath[Long]("id", None)) { (id) =>
+        controllers_ItemController_update6_invoker.call(ItemController_3.update(id))
+      }
+  
+    // @LINE:26
+    case controllers_ItemController_delete7_route(params@_) =>
+      call(params.fromPath[Long]("id", None)) { (id) =>
+        controllers_ItemController_delete7_invoker.call(ItemController_3.delete(id))
+      }
+  
+    // @LINE:30
+    case controllers_Assets_versioned8_route(params@_) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned6_invoker.call(Assets_2.versioned(path, file))
+        controllers_Assets_versioned8_invoker.call(Assets_2.versioned(path, file))
       }
   }
 }

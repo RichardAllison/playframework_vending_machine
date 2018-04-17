@@ -1,4 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0m/mnt/c/Users/Richard/Desktop/Java Web App/play-project/vendingmachine/app/controllers/ItemController.java:45:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol:   method find(java.lang.Long)[0m
-[0m[[0m[31merror[0m] [0m[0m  location: class models.VendingItem[0m
-[0m[[0m[31merror[0m] [0m[0m        VendingItem item = VendingItem.find(id);[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/c/Users/Richard/Desktop/Java Web App/play-project/vendingmachine/app/controllers/ItemController.java:54:1: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m  symbol:   variable setId[0m
+[0m[[0m[31merror[0m] [0m[0m  location: variable updatedItem of type models.VendingItem[0m
+[0m[[0m[31merror[0m] [0m[0m        updatedItem.setId = id;[0m

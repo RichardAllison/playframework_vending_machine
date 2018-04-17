@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/mnt/c/Users/Richard/Desktop/Java Web App/play-project/vendingmachine/conf/routes
-// @DATE:Tue Apr 17 15:38:48 GMT 2018
+// @DATE:Tue Apr 17 16:21:13 GMT 2018
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -19,6 +19,36 @@ package controllers.javascript {
     }
 
   
+    // @LINE:26
+    def delete: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ItemController.delete",
+      """
+        function(id0) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "service/items/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("id", id0)) + "/delete"})
+        }
+      """
+    )
+  
+    // @LINE:20
+    def edit: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ItemController.edit",
+      """
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "service/items/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("id", id0))})
+        }
+      """
+    )
+  
+    // @LINE:22
+    def update: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.ItemController.update",
+      """
+        function(id0) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "service/items/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("id", id0))})
+        }
+      """
+    )
+  
     // @LINE:17
     def save: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.ItemController.save",
@@ -35,16 +65,6 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "service/items/new"})
-        }
-      """
-    )
-  
-    // @LINE:23
-    def delete: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.ItemController.delete",
-      """
-        function(id0) {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "service/items/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("id", id0)) + "/delete"})
         }
       """
     )
@@ -101,7 +121,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:27
+  // @LINE:30
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -109,7 +129,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:27
+    // @LINE:30
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
