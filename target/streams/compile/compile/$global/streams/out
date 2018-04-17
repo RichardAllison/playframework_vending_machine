@@ -1,0 +1,4 @@
+[0m[[0m[31merror[0m] [0m[0m/mnt/c/Users/Richard/Desktop/Java Web App/play-project/vendingmachine/app/controllers/ItemController.java:12:1: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m  symbol:   method ok(play.twirl.api.Html)[0m
+[0m[[0m[31merror[0m] [0m[0m  location: class controllers.ItemController[0m
+[0m[[0m[31merror[0m] [0m[0m        return ok(views.html.items.render(items));[0m

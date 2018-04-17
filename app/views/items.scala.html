@@ -1,0 +1,22 @@
+@(items: java.util.List[VendingItem])
+
+@main("Service Vending Machine") {
+
+    <table id='items_list' class="table">
+
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        @for(item <- items) {
+        <tr>
+            <td>@item.name</td>
+            <td>@item.price</td>
+        </tr>
+        }
+        </tbody>
+    </table>
+}

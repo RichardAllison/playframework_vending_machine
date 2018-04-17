@@ -1,0 +1,46 @@
+2018-04-17 12:01:56,798 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-2 - Creating Pool for datasource 'default'
+2018-04-17 12:01:57,800 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-2 - Database [default] connected at jdbc:postgresql://localhost:5432/vending_machine
+2018-04-17 12:02:04,103 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-2 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2018-04-17 12:02:04,448 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-2 - Application started (Dev)
+2018-04-17 12:02:26,161 [WARN] from play.filters.CSRF in play-dev-mode-akka.actor.default-dispatcher-12 - [CSRF] Check failed because no or invalid token found in body for /index.html
+2018-04-17 12:02:26,171 [WARN] from play.filters.CSRF in play-dev-mode-akka.actor.default-dispatcher-12 - [CSRF] Check failed with NoTokenInBody for /index.html
+2018-04-17 12:04:35,093 [INFO] from application in application-akka.actor.default-dispatcher-9 - Shutting down connection pool.
+2018-04-17 12:04:35,901 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-16 - Creating Pool for datasource 'default'
+2018-04-17 12:04:36,270 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-16 - Database [default] connected at jdbc:postgresql://localhost:5432/vending_machine
+2018-04-17 12:04:37,355 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-16 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2018-04-17 12:04:37,453 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-16 - Application started (Dev)
+2018-04-17 12:06:31,889 [INFO] from application in application-akka.actor.default-dispatcher-11 - Shutting down connection pool.
+2018-04-17 12:06:32,547 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-27 - Creating Pool for datasource 'default'
+2018-04-17 12:06:32,982 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-27 - Database [default] connected at jdbc:postgresql://localhost:5432/vending_machine
+2018-04-17 12:06:34,023 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-27 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2018-04-17 12:06:34,067 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-27 - Application started (Dev)
+2018-04-17 12:06:34,143 [WARN] from play.filters.CSRF in play-dev-mode-akka.actor.default-dispatcher-27 - [CSRF] Check failed because no or invalid token found in body for /index.html
+2018-04-17 12:06:34,147 [WARN] from play.filters.CSRF in play-dev-mode-akka.actor.default-dispatcher-27 - [CSRF] Check failed with NoTokenInBody for /index.html
+2018-04-17 12:48:54,805 [WARN] from com.zaxxer.hikari.pool.HikariPool in HikariPool-3 housekeeper - HikariPool-3 - Thread starvation or clock leap detected (housekeeper delta=41m21s714ms521µs).
+2018-04-17 12:53:11,172 [INFO] from application in application-akka.actor.default-dispatcher-11 - Shutting down connection pool.
+2018-04-17 12:53:12,319 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-26 - Creating Pool for datasource 'default'
+2018-04-17 12:53:13,281 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-26 - Database [default] connected at jdbc:postgresql://localhost:5432/vending_machine
+2018-04-17 12:53:16,889 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-26 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2018-04-17 12:53:16,939 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-26 - Application started (Dev)
+2018-04-17 12:53:23,413 [WARN] from play.filters.CSRF in play-dev-mode-akka.actor.default-dispatcher-35 - [CSRF] Check failed because no or invalid token found in body for /index.html
+2018-04-17 12:53:23,414 [WARN] from play.filters.CSRF in play-dev-mode-akka.actor.default-dispatcher-35 - [CSRF] Check failed with NoTokenInBody for /index.html

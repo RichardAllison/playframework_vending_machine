@@ -1,0 +1,47 @@
+@(items: java.util.List[VendingItem])
+
+@main("Vending Machine") {
+  <h1>Vending Machine</h1>
+  <p><a href="/service">Service</a></p>
+  <form id="select-item" action="index.html" method="post">
+    <p>Select item:</p>
+    <table>
+      <tbody>
+      @for(item <- items) {
+        <tr>
+          <td><input type="radio" name="items" value=@item.id id="item-@item.id"></td>
+          <td><label for="item-@item.id">@item.name: @item.price</label></td>
+        </tr>
+      }
+      </tbody>
+      <tfoot>
+      <tr>
+        <td colspan="2"><input type="submit" name="select-item-submit" id="select-item-submit" value="Select"></td>
+      </tr>
+      </tfoot>
+    </table>
+  </form>
+
+  <dl>
+    <div><dt>Item:</dt><dd id="item-display"></dd></div>
+    <div><dt>Money due:</dt><dd id="due-display"></dd></div>
+    <div><dt>Paid:</dt><dd id="paid-display"></dd></div>
+  </dl>
+  <form id="select-item" action="index.html" method="post">
+    <p>Insert coin:</p>
+    <input type="radio" name="coins" value="5" id="dime">
+    <label for="dime">Dime</label>
+    <input type="radio" name="coins" value="10" id="nickel">
+    <label for="nickel">Nickel</label>
+    <input type="radio" name="coins" value="25" id="quarter">
+    <label for="quarter">Quarter</label>
+    <input type="radio" name="coins" value="100" id="dollar">
+    <label for="dollar">Dollar</label>
+  </form>
+
+  <form id="coin-select" action="index.html" method="post">
+    <button type="button" name="button">Return money</button>
+  </form>
+
+
+}
