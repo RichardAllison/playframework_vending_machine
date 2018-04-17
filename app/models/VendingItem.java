@@ -12,13 +12,13 @@ import play.data.validation.*;
 public class VendingItem extends Model {
 
     @Id
-    protected Long id;
+    private Long id;
     @Constraints.Required(message = "Name is required")
-    protected String name;
+    private String name;
     @Constraints.Required
-    protected double price;
+    private double price;
     @Constraints.Required
-    protected int quantity;
+    private int quantity;
 
     public static final Finder<Long, VendingItem> find = new Finder<>(VendingItem.class);
 

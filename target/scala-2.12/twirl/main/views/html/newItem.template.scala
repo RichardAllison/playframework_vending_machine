@@ -36,15 +36,14 @@ Seq[Any](format.raw/*1.27*/("""
 """),format.raw/*4.1*/("""
 """),_display_(/*5.2*/main("Vending Machine")/*5.25*/ {_display_(Seq[Any](format.raw/*5.27*/("""
 
-"""),_display_(/*7.2*/helper/*7.8*/.form(action = routes.ItemController.save(), 'id -> "item_form")/*7.72*/ {_display_(Seq[Any](format.raw/*7.74*/("""
+    """),_display_(/*7.6*/helper/*7.12*/.form(action = routes.ItemController.save(), 'id -> "item_form")/*7.76*/ {_display_(Seq[Any](format.raw/*7.78*/("""
 
-"""),_display_(/*9.2*/helper/*9.8*/.inputText(form("name"), '_id -> "name", '_label -> "Name:")),format.raw/*9.68*/("""
+        """),_display_(/*9.10*/helper/*9.16*/.inputText(form("name"), '_id -> "name", '_label -> "Name:")),format.raw/*9.76*/("""
+        """),_display_(/*10.10*/helper/*10.16*/.inputText(form("price"), '_id -> "price", '_label -> "Price:")),format.raw/*10.79*/("""
+        """),_display_(/*11.10*/helper/*11.16*/.inputText(form("quantity"), '_id -> "quantity", '_label -> "Quantity:")),format.raw/*11.88*/("""
 
-"""),_display_(/*11.2*/helper/*11.8*/.inputText(form("price"), '_id -> "price", '_label -> "Price:")),format.raw/*11.71*/("""
-"""),_display_(/*12.2*/helper/*12.8*/.inputText(form("quantity"), '_id -> "quantity", '_label -> "Quantity:")),format.raw/*12.80*/("""
-
-            """),format.raw/*14.13*/("""<input type="submit" id="submit" name="submit" value="Add"/>
-        """)))}),format.raw/*15.10*/("""
+        """),format.raw/*13.9*/("""<input type="submit" id="submit" name="submit" value="Add"/>
+    """)))}),format.raw/*14.6*/("""
 
 """)))}))
       }
@@ -62,11 +61,11 @@ Seq[Any](format.raw/*1.27*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Tue Apr 17 15:07:34 GMT 2018
+                  DATE: Tue Apr 17 15:13:01 GMT 2018
                   SOURCE: /mnt/c/Users/Richard/Desktop/Java Web App/play-project/vendingmachine/app/views/newItem.scala.html
-                  HASH: ce89052a4dd57ed3f6f911bad24e84b8e5905194
-                  MATRIX: 961->1|1059->31|1110->26|1140->54|1168->57|1199->80|1238->82|1268->87|1281->93|1353->157|1392->159|1422->164|1435->170|1515->230|1546->235|1560->241|1644->304|1673->307|1687->313|1780->385|1824->401|1926->472
-                  LINES: 28->1|31->3|34->1|36->4|37->5|37->5|37->5|39->7|39->7|39->7|39->7|41->9|41->9|41->9|43->11|43->11|43->11|44->12|44->12|44->12|46->14|47->15
+                  HASH: edc6298adab9902725e2d7ad3d6cef52562cc4eb
+                  MATRIX: 961->1|1059->31|1110->26|1140->54|1168->57|1199->80|1238->82|1272->91|1286->97|1358->161|1397->163|1436->176|1450->182|1530->242|1568->253|1583->259|1667->322|1705->333|1720->339|1813->411|1852->423|1949->490
+                  LINES: 28->1|31->3|34->1|36->4|37->5|37->5|37->5|39->7|39->7|39->7|39->7|41->9|41->9|41->9|42->10|42->10|42->10|43->11|43->11|43->11|45->13|46->14
                   -- GENERATED --
               */
           

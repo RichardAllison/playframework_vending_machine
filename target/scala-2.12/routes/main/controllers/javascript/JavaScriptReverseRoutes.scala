@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/mnt/c/Users/Richard/Desktop/Java Web App/play-project/vendingmachine/conf/routes
-// @DATE:Tue Apr 17 14:04:27 GMT 2018
+// @DATE:Tue Apr 17 15:21:50 GMT 2018
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -19,7 +19,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:16
+    // @LINE:17
     def save: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.ItemController.save",
       """
@@ -91,7 +91,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:22
+  // @LINE:23
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -99,7 +99,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:22
+    // @LINE:23
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """

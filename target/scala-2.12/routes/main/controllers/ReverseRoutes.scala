@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/mnt/c/Users/Richard/Desktop/Java Web App/play-project/vendingmachine/conf/routes
-// @DATE:Tue Apr 17 14:04:27 GMT 2018
+// @DATE:Tue Apr 17 15:21:50 GMT 2018
 
 import play.api.mvc.Call
 
@@ -18,7 +18,7 @@ package controllers {
     }
 
   
-    // @LINE:16
+    // @LINE:17
     def save(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "service/items")
@@ -68,14 +68,14 @@ package controllers {
   
   }
 
-  // @LINE:22
+  // @LINE:23
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:22
+    // @LINE:23
     def versioned(file:Asset): Call = {
       implicit lazy val _rrc = new play.core.routing.ReverseRouteContext(Map(("path", "/public"))); _rrc
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[play.api.mvc.PathBindable[Asset]].unbind("file", file))

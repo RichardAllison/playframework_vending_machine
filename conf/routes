@@ -13,6 +13,7 @@ GET     /service/items                  controllers.ItemController.index()
 
 # Add item
 GET     /service/items/new              controllers.ItemController.newItem()
++ nocsrf
 POST    /service/items                  controllers.ItemController.save()
 
 # Edit item

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/mnt/c/Users/Richard/Desktop/Java Web App/play-project/vendingmachine/conf/routes
-// @DATE:Tue Apr 17 14:04:27 GMT 2018
+// @DATE:Tue Apr 17 15:21:50 GMT 2018
 
 package router
 
@@ -20,7 +20,7 @@ class Routes(
   ServiceController_0: controllers.ServiceController,
   // @LINE:11
   ItemController_3: controllers.ItemController,
-  // @LINE:22
+  // @LINE:23
   Assets_2: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -33,7 +33,7 @@ class Routes(
     ServiceController_0: controllers.ServiceController,
     // @LINE:11
     ItemController_3: controllers.ItemController,
-    // @LINE:22
+    // @LINE:23
     Assets_2: controllers.Assets
   ) = this(errorHandler, HomeController_1, ServiceController_0, ItemController_3, Assets_2, "/")
 
@@ -132,7 +132,7 @@ class Routes(
     )
   )
 
-  // @LINE:16
+  // @LINE:17
   private[this] lazy val controllers_ItemController_save4_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("service/items")))
   )
@@ -146,11 +146,11 @@ class Routes(
       "POST",
       this.prefix + """service/items""",
       """""",
-      Seq()
+      Seq("""nocsrf""")
     )
   )
 
-  // @LINE:22
+  // @LINE:23
   private[this] lazy val controllers_Assets_versioned5_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
@@ -195,13 +195,13 @@ class Routes(
         controllers_ItemController_newItem3_invoker.call(ItemController_3.newItem())
       }
   
-    // @LINE:16
+    // @LINE:17
     case controllers_ItemController_save4_route(params@_) =>
       call { 
         controllers_ItemController_save4_invoker.call(ItemController_3.save())
       }
   
-    // @LINE:22
+    // @LINE:23
     case controllers_Assets_versioned5_route(params@_) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
         controllers_Assets_versioned5_invoker.call(Assets_2.versioned(path, file))
