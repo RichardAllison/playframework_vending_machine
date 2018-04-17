@@ -41,5 +41,13 @@ public class ItemController extends Controller {
 //    public void edit(long id) {}
 //    public void update(long id) {}
 
+    public Result delete(Long id) {
+        VendingItem item = VendingItem.find.byId(id);
+        if (item != null) {
+            item.delete();
+        }
+        return index();
+    }
+
 
 }

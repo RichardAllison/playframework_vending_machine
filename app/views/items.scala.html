@@ -9,7 +9,8 @@
         <tr>
             <th>Name</th>
             <th>Price</th>
-            <th>Actions</th>
+            <th>Quantity</th>
+            <th colspan="2">Actions</th>
         </tr>
         </thead>
         <tbody>
@@ -17,7 +18,17 @@
         <tr>
             <td>@item.getName</td>
             <td>@item.getPrice</td>
-            <td><a href="/service/items/@item.getId">edit</a> | <a href="/service/items/@item.getId/delete">delete</a></td>
+            <td>@item.getQuantity</td>
+            <td>
+                <a href="/service/items/@item.getId">
+                    edit
+                </a>
+            </td>
+            <td>
+                <form action="/service/items/@item.getId/delete" method="POST">
+                    <input type="submit" value="Delete">
+                </form>
+            </td>
         </tr>
         }
         </tbody>

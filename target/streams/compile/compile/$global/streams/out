@@ -1,5 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0m/mnt/c/Users/Richard/Desktop/Java Web App/play-project/vendingmachine/app/controllers/ItemController.java:26:1: method render in class views.html.newItem cannot be applied to given types;[0m
-[0m[[0m[31merror[0m] [0m[0m  required: play.data.Form<models.VendingItem>[0m
-[0m[[0m[31merror[0m] [0m[0m  found: no arguments[0m
-[0m[[0m[31merror[0m] [0m[0m  reason: actual and formal argument lists differ in length[0m
-[0m[[0m[31merror[0m] [0m[0m        return ok(views.html.newItem.render());[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/c/Users/Richard/Desktop/Java Web App/play-project/vendingmachine/app/controllers/ItemController.java:45:1: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m  symbol:   method find(java.lang.Long)[0m
+[0m[[0m[31merror[0m] [0m[0m  location: class models.VendingItem[0m
+[0m[[0m[31merror[0m] [0m[0m        VendingItem item = VendingItem.find(id);[0m
