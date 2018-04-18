@@ -35,12 +35,17 @@ public class HomeController extends Controller {
         sale.setTime(new Date());
         sale.save();
         return redirect("/sale/" + sale.getId() + "/item/" + item.getId());
-
     }
 
     public Result sale(long id, long itemId) {
-        VendingItem item = VendingItem.find.byId(Long.valueOf(itemId));
         Sale sale = Sale.find.byId(Long.valueOf(id));
+        if (sale.amountDue() <= 0){
+            VendingMachine vendingMachine = VendingMachine.find.byId(1L);
+            VendingItem item = vendingMachine.vend(itemId);
+            sale.setComplete(true);
+            return ok(views.html.saleComplete.render(sale, item));
+        }
+        VendingItem item = VendingItem.find.byId(Long.valueOf(itemId));
         return ok(views.html.sale.render(sale, item));
     }
 
@@ -62,6 +67,7 @@ public class HomeController extends Controller {
         vendingMachine.update();
         return redirect("/sale/" + sale.getId() + "/item/" + item.getId());
     }
+
     public Result insertDime(long id, long itemId){
         VendingMachine vendingMachine = VendingMachine.find.byId(1L);
         VendingItem item = VendingItem.find.byId(Long.valueOf(itemId));
@@ -80,6 +86,7 @@ public class HomeController extends Controller {
         vendingMachine.update();
         return redirect("/sale/" + sale.getId() + "/item/" + item.getId());
     }
+
     public Result insertQuarter(long id, long itemId){
         VendingMachine vendingMachine = VendingMachine.find.byId(1L);
         VendingItem item = VendingItem.find.byId(Long.valueOf(itemId));
@@ -98,6 +105,7 @@ public class HomeController extends Controller {
         vendingMachine.update();
         return redirect("/sale/" + sale.getId() + "/item/" + item.getId());
     }
+
     public Result insertDollar(long id, long itemId){
         VendingMachine vendingMachine = VendingMachine.find.byId(1L);
         VendingItem item = VendingItem.find.byId(Long.valueOf(itemId));
@@ -155,5 +163,4 @@ public class HomeController extends Controller {
         return ok(views.html.saleReturnCoins.render(sale, item, coinsReturned));
     }
 
-    
 }

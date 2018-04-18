@@ -77,7 +77,11 @@ public class VendingMachine extends Model {
         return vendingItems;
     }
 
-//    public VendingItem vend(VendingItem item) {
-//
-//    }
+    public VendingItem vend(long id) {
+        VendingItem item = VendingItem.find.byId(Long.valueOf(id));
+        int newQuantity = item.getQuantity() -1;
+        item.setQuantity(newQuantity);
+        item.save();
+        return item;
+    }
 }
