@@ -74,10 +74,6 @@ public class ServiceController extends Controller {
         if (vendingMachine == null){
             vendingMachine = new VendingMachine();
             vendingMachine.setId(1);
-            vendingMachine.setDimes(1);
-            vendingMachine.setNickels(0);
-            vendingMachine.setQuarters(0);
-            vendingMachine.setDollars(0);
             vendingMachine.save();
         }
         double total = vendingMachine.calculateTotal();

@@ -1,0 +1,49 @@
+@(sale: Sale, item: VendingItem, coinsReturned: java.util.HashMap[String, Integer])
+
+@main("Service Vending Machine") {
+<h3>Coins Returned:</h3>
+<dl>
+    <div><dt>Dollars: @coinsReturned.get("Dollars") </dt><dd id="dollars-display"></dd></div>
+    <div><dt>Quarters: @coinsReturned.get("Quarters") </dt><dd id="dollars-display"></dd></div>
+    <div><dt>Dimes: @coinsReturned.get("Dimes") </dt><dd id="dollars-display"></dd></div>
+    <div><dt>Nickels: @coinsReturned.get("Nickels") </dt><dd id="dollars-display"></dd></div>
+</dl>
+
+
+<dl>
+    <div><dt>Item: @item.getName() - @item.getPrice()</dt><dd id="item-display"></dd></div>
+    <div><dt>Money due: @sale.amountDue()</dt><dd id="due-display"></dd></div>
+    <div><dt>Paid: @sale.getAmountPaid()</dt><dd id="paid-display"></dd></div>
+</dl>
+
+<p>Insert coin:</p>
+<table>
+    <tr>
+        <td>
+            @helper.form(action = routes.HomeController.insertNickel(sale.getId, item.getId), 'id -> "select_coin_form") {
+            <input type="submit" name="nickels" value="Nickels" id="nickel">
+            }
+        </td>
+        <td>
+            @helper.form(action = routes.HomeController.insertDime(sale.getId, item.getId), 'id -> "select_coin_form") {
+            <input type="submit" name="dimes" value="Dimes" id="dime">
+            }
+        </td>
+        <td>
+            @helper.form(action = routes.HomeController.insertQuarter(sale.getId, item.getId), 'id -> "select_coin_form") {
+            <input type="submit" name="quarters" value="Quarters" id="quarter">
+            }
+        </td>
+        <td>
+            @helper.form(action = routes.HomeController.insertDollar(sale.getId, item.getId), 'id -> "select_coin_form") {
+            <input type="submit" name="dollars" value="Dollars" id="dollar">
+            }
+        </td>
+
+    </tr>
+</table>
+
+<form id="coin-select" action="index.html" method="post">
+    <button type="button" name="button">Return money</button>
+</form>
+}

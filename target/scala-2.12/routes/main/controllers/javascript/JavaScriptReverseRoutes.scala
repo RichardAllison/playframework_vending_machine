@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/mnt/c/Users/Richard/Desktop/Java Web App/play-project/vendingmachine/conf/routes
-// @DATE:Wed Apr 18 19:07:29 GMT 2018
+// @DATE:Wed Apr 18 20:02:20 GMT 2018
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -11,7 +11,7 @@ import _root_.play.libs.F
 // @LINE:6
 package controllers.javascript {
 
-  // @LINE:21
+  // @LINE:23
   class ReverseServiceController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -19,7 +19,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:25
+    // @LINE:27
     def change: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.ServiceController.change",
       """
@@ -29,7 +29,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:31
+    // @LINE:33
     def saveItem: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.ServiceController.saveItem",
       """
@@ -39,7 +39,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:36
+    // @LINE:38
     def updateItem: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.ServiceController.updateItem",
       """
@@ -49,7 +49,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:38
+    // @LINE:40
     def editChange: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.ServiceController.editChange",
       """
@@ -59,7 +59,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:34
+    // @LINE:36
     def editItem: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.ServiceController.editItem",
       """
@@ -69,7 +69,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:24
+    // @LINE:26
     def items: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.ServiceController.items",
       """
@@ -79,7 +79,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:44
+    // @LINE:46
     def deleteItem: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.ServiceController.deleteItem",
       """
@@ -89,7 +89,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:40
+    // @LINE:42
     def updateChange: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.ServiceController.updateChange",
       """
@@ -99,7 +99,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:29
+    // @LINE:31
     def newItem: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.ServiceController.newItem",
       """
@@ -109,7 +109,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:21
+    // @LINE:23
     def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.ServiceController.index",
       """
@@ -135,6 +135,16 @@ package controllers.javascript {
       """
         function(id0,itemId1) {
           return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "sale/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("id", id0)) + "/item/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("itemId", itemId1)) + "/dime"})
+        }
+      """
+    )
+  
+    // @LINE:20
+    def returnCoins: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.returnCoins",
+      """
+        function(id0,itemId1) {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "sale/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("id", id0)) + "/item/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("itemId", itemId1)) + "/return"})
         }
       """
     )
@@ -201,7 +211,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:48
+  // @LINE:50
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -209,7 +219,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:48
+    // @LINE:50
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """

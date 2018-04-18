@@ -6,6 +6,7 @@ import models.VendingMachine;
 import play.mvc.*;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import javax.inject.Inject;
 import play.data.DynamicForm;
@@ -43,69 +44,22 @@ public class HomeController extends Controller {
         return ok(views.html.sale.render(sale, item));
     }
 
-//    public Result updateSale(long id, long itemId) {
-//        Form<VendingMachine> requestDataForm = formFactory.form(VendingMachine.class).bindFromRequest();
-//        VendingMachine requestData = new VendingMachine();
-//        VendingMachine vendingMachine = VendingMachine.find.byId(1L);
-//        VendingItem item = VendingItem.find.byId(Long.valueOf(itemId));
-//        Sale sale = new Sale();
-//        sale.setId(id);
-//
-//        sale.setNickelsPaid(requestData.getNickels());
-//        sale.setDimesPaid(requestData.getDimes());
-//        sale.setQuartersPaid(requestData.getQuarters());
-//        sale.setDollarsPaid(requestData.getDollars());
-//
-////        double newAmountPaid = sale.getAmountPaid();
-////        if (requestData.get("coin") == "Nickel") {
-////            int nickelsPaid = sale.getNickelsPaid() + 1;
-////            sale.setNickelsPaid(1);
-////            vendingMachine.setNickels((vendingMachine.getNickels() + 1));
-////            newAmountPaid += 0.05;
-////        }
-////        if (requestData.get("coin") == "Dime") {
-////            int dimesPaid = sale.getDimesPaid() + 1;
-////            sale.setDimesPaid(dimesPaid);
-////            vendingMachine.setDimes((vendingMachine.getDimes() + 1));
-////            newAmountPaid += 0.10;
-////        }
-////        if (requestData.get("coin") =="Quarter") {
-////            int quartersPaid = sale.getQuartersPaid() + 1;
-////            sale.setQuartersPaid(quartersPaid);
-////            vendingMachine.setQuarters((vendingMachine.getQuarters() + 1));
-////            newAmountPaid += 0.25;
-////        }
-////        if (requestData.get("coin")=="Dollar") {
-////            int dollarsPaid = sale.getDollarsPaid() + 1;
-////            sale.setDollarsPaid(dollarsPaid);
-////            vendingMachine.setDollars((vendingMachine.getDollars()) + 1);
-////            newAmountPaid += 1;
-////        }
-////
-////        sale.setAmountPaid(newAmountPaid);
-////
-////        if (newAmountPaid == item.getPrice()) {
-////            sale.setComplete(true);
-////            // vending machine should vend item
-////        }
-//
-//        sale.update();
-//        requestData.save();
-//        return ok(views.html.sale.render(sale, item));
-////        return redirect("/sale/" + sale.getId() + "/item/" + item.getId());
-//    }
-
     public Result insertNickel(long id, long itemId){
         VendingMachine vendingMachine = VendingMachine.find.byId(1L);
         VendingItem item = VendingItem.find.byId(Long.valueOf(itemId));
         Sale sale = Sale.find.byId(Long.valueOf(id));
 
-        vendingMachine.setNickels((vendingMachine.getNickels() + 1));
+        int updatedNickels = vendingMachine.getNickels() + 1;
+        vendingMachine.setNickels(updatedNickels);
+
         int nickelsPaid = sale.getNickelsPaid() + 1;
         sale.setNickelsPaid(nickelsPaid);
+
         double newAmountPaid = sale.getAmountPaid() + 0.05;
         sale.setAmountPaid(newAmountPaid);
+
         sale.update();
+        vendingMachine.update();
         return redirect("/sale/" + sale.getId() + "/item/" + item.getId());
     }
     public Result insertDime(long id, long itemId){
@@ -113,12 +67,17 @@ public class HomeController extends Controller {
         VendingItem item = VendingItem.find.byId(Long.valueOf(itemId));
         Sale sale = Sale.find.byId(Long.valueOf(id));
 
-        vendingMachine.setDimes((vendingMachine.getDimes() + 1));
+        int updatedDimes = (vendingMachine.getDimes() + 1);
+        vendingMachine.setDimes(updatedDimes);
+
         int dimesPaid = sale.getDimesPaid() + 1;
         sale.setDimesPaid(dimesPaid);
+
         double newAmountPaid = sale.getAmountPaid() + 0.10;
         sale.setAmountPaid(newAmountPaid);
+
         sale.update();
+        vendingMachine.update();
         return redirect("/sale/" + sale.getId() + "/item/" + item.getId());
     }
     public Result insertQuarter(long id, long itemId){
@@ -126,12 +85,17 @@ public class HomeController extends Controller {
         VendingItem item = VendingItem.find.byId(Long.valueOf(itemId));
         Sale sale = Sale.find.byId(Long.valueOf(id));
 
-        vendingMachine.setQuarters((vendingMachine.getQuarters() + 1));
+        int updatedQuarters = vendingMachine.getQuarters() + 1;
+        vendingMachine.setQuarters(updatedQuarters);
+
         int quartersPaid = sale.getQuartersPaid() + 1;
         sale.setQuartersPaid(quartersPaid);
+
         double newAmountPaid = sale.getAmountPaid() + 0.25;
         sale.setAmountPaid(newAmountPaid);
+
         sale.update();
+        vendingMachine.update();
         return redirect("/sale/" + sale.getId() + "/item/" + item.getId());
     }
     public Result insertDollar(long id, long itemId){
@@ -139,12 +103,57 @@ public class HomeController extends Controller {
         VendingItem item = VendingItem.find.byId(Long.valueOf(itemId));
         Sale sale = Sale.find.byId(Long.valueOf(id));
 
-        vendingMachine.setDollars((vendingMachine.getDollars()) + 1);
+        int updatedDollars = vendingMachine.getDollars() + 1;
+        vendingMachine.setDollars(updatedDollars);
+
         int dollarsPaid = sale.getDollarsPaid() + 1;
         sale.setDollarsPaid(dollarsPaid);
+
         double newAmountPaid = sale.getAmountPaid() + 1;
         sale.setAmountPaid(newAmountPaid);
+
         sale.update();
+        vendingMachine.update();
         return redirect("/sale/" + sale.getId() + "/item/" + item.getId());
     }
+
+    public Result returnCoins(long id, long itemId){
+        VendingMachine vendingMachine = VendingMachine.find.byId(1L);
+        VendingItem item = VendingItem.find.byId(Long.valueOf(itemId));
+        Sale sale = Sale.find.byId(Long.valueOf(id));
+
+        int nickelsPaid = sale.getNickelsPaid();
+        int dimesPaid = sale.getDimesPaid();
+        int quartersPaid = sale.getQuartersPaid();
+        int dollarsPaid = sale.getDollarsPaid();
+
+        int updatedNickels = vendingMachine.getNickels() - nickelsPaid;
+
+        vendingMachine.setNickels(updatedNickels);
+        int updatedDimes = vendingMachine.getDimes() - dimesPaid;
+        vendingMachine.setDimes(updatedDimes);
+        int updatedQuarters = vendingMachine.getQuarters() - quartersPaid;
+        vendingMachine.setQuarters(updatedQuarters);
+        int updatedDollars = vendingMachine.getDollars() - dollarsPaid;
+        vendingMachine.setDollars(updatedDollars);
+
+        sale.setNickelsPaid(0);
+        sale.setDimesPaid(0);
+        sale.setQuartersPaid(0);
+        sale.setDollarsPaid(0);
+        sale.setAmountPaid(0);
+
+        sale.update();
+        vendingMachine.update();
+
+        HashMap<String, Integer> coinsReturned = new HashMap<>();
+        coinsReturned.put("Nickels", nickelsPaid);
+        coinsReturned.put("Dimes", dimesPaid);
+        coinsReturned.put("Quarters", quartersPaid);
+        coinsReturned.put("Dollars", dollarsPaid);
+
+        return ok(views.html.saleReturnCoins.render(sale, item, coinsReturned));
+    }
+
+    
 }

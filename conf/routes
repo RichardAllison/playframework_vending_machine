@@ -16,6 +16,8 @@ POST    /sale/:id/item/:itemId/dime     controllers.HomeController.insertDime(id
 POST    /sale/:id/item/:itemId/quarter  controllers.HomeController.insertQuarter(id:Long, itemId:Long)
 + nocsrf
 POST    /sale/:id/item/:itemId/dollar   controllers.HomeController.insertDollar(id:Long, itemId:Long)
++ nocsrf
+POST    /sale/:id/item/:itemId/return   controllers.HomeController.returnCoins(id:Long, itemId:Long)
 
 # service page
 GET     /service                        controllers.ServiceController.index()

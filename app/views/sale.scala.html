@@ -14,7 +14,6 @@
                 @helper.form(action = routes.HomeController.insertNickel(sale.getId, item.getId), 'id -> "select_coin_form") {
                     <input type="submit" name="nickels" value="Nickels" id="nickel">
                 }
-
             </td>
             <td>
                 @helper.form(action = routes.HomeController.insertDime(sale.getId, item.getId), 'id -> "select_coin_form") {
@@ -34,8 +33,7 @@
 
         </tr>
     </table>
-
-    <form id="coin-select" action="index.html" method="post">
-        <button type="button" name="button">Return money</button>
-    </form>
+    @helper.form(action = routes.HomeController.returnCoins(sale.getId, item.getId), 'id -> "return_coin_form") {
+        <input type="submit" value="Return Coins">
+    }
 }
