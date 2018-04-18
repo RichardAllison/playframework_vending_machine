@@ -36,7 +36,7 @@ Seq[Any](format.raw/*1.27*/("""
 """),format.raw/*4.1*/("""
 """),_display_(/*5.2*/main("Vending Machine")/*5.25*/ {_display_(Seq[Any](format.raw/*5.27*/("""
 
-    """),_display_(/*7.6*/helper/*7.12*/.form(action = routes.ItemController.save(), 'id -> "item_form")/*7.76*/ {_display_(Seq[Any](format.raw/*7.78*/("""
+    """),_display_(/*7.6*/helper/*7.12*/.form(action = routes.ServiceController.saveItem(), 'id -> "item_form")/*7.83*/ {_display_(Seq[Any](format.raw/*7.85*/("""
 
         """),_display_(/*9.10*/helper/*9.16*/.inputText(form("name"), '_id -> "name", '_label -> "Name:")),format.raw/*9.76*/("""
         """),_display_(/*10.10*/helper/*10.16*/.inputText(form("price"), '_id -> "price", '_label -> "Price:")),format.raw/*10.79*/("""
@@ -61,10 +61,10 @@ Seq[Any](format.raw/*1.27*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Tue Apr 17 15:13:01 GMT 2018
+                  DATE: Wed Apr 18 13:10:47 GMT 2018
                   SOURCE: /mnt/c/Users/Richard/Desktop/Java Web App/play-project/vendingmachine/app/views/newItem.scala.html
-                  HASH: edc6298adab9902725e2d7ad3d6cef52562cc4eb
-                  MATRIX: 961->1|1059->31|1110->26|1140->54|1168->57|1199->80|1238->82|1272->91|1286->97|1358->161|1397->163|1436->176|1450->182|1530->242|1568->253|1583->259|1667->322|1705->333|1720->339|1813->411|1852->423|1949->490
+                  HASH: a3d6bf6b4a718a0344b2392b2413cfbcef8ab17d
+                  MATRIX: 961->1|1059->31|1110->26|1140->54|1168->57|1199->80|1238->82|1272->91|1286->97|1365->168|1404->170|1443->183|1457->189|1537->249|1575->260|1590->266|1674->329|1712->340|1727->346|1820->418|1859->430|1956->497
                   LINES: 28->1|31->3|34->1|36->4|37->5|37->5|37->5|39->7|39->7|39->7|39->7|41->9|41->9|41->9|42->10|42->10|42->10|43->11|43->11|43->11|45->13|46->14
                   -- GENERATED --
               */

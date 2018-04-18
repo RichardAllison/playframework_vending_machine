@@ -7,7 +7,7 @@
 		revision="1.0-SNAPSHOT"
 		conf="test-internal"
 		confs="compile, runtime, test, provided, optional, universal, universal-docs, universal-src, windows, docker, linux, rpm, debian, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool, docs"
-		date="20180417114044"/>
+		date="20180418131753"/>
 	<dependencies>
 		<module organisation="org.postgresql" name="postgresql">
 			<revision name="9.4-1206-jdbc42" status="release" pubdate="20151125200416" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://jdbc.postgresql.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="85">
@@ -725,13 +725,13 @@
 			</revision>
 		</module>
 		<module organisation="com.typesafe.play" name="play-jdbc-evolutions_2.12">
-			<revision name="2.6.13" status="release" pubdate="20180406184452" resolver="public" artresolver="public" homepage="https://playframework.com" downloaded="true" searched="true" default="false" conf="default, compile, runtime, default(compile), master, runtime(*), master(compile), compile(*)" position="63">
+			<revision name="2.6.13" status="release" pubdate="20180406184452" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://playframework.com" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master, runtime(*), master(compile), compile(*)" position="63">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
-				<metadata-artifact status="successful" details="" size="2571" time="417" location="/home/Richard/.ivy2/cache/com.typesafe.play/play-jdbc-evolutions_2.12/ivy-2.6.13.xml" searched="true" original-local-location="/home/Richard/.ivy2/cache/com.typesafe.play/play-jdbc-evolutions_2.12/ivy-2.6.13.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/play/play-jdbc-evolutions_2.12/2.6.13/play-jdbc-evolutions_2.12-2.6.13.pom"/>
+				<metadata-artifact status="no" details="" size="3351" time="0" location="/home/Richard/.ivy2/cache/com.typesafe.play/play-jdbc-evolutions_2.12/ivy-2.6.13.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/play/play-jdbc-evolutions_2.12/2.6.13/play-jdbc-evolutions_2.12-2.6.13.pom"/>
 				<caller organisation="com.richardallison" name="vendingmachine_2.12" conf="test, compile, provided, test-internal, runtime, optional" rev="2.6.13" rev-constraint-default="2.6.13" rev-constraint-dynamic="2.6.13" callerrev="1.0-SNAPSHOT"/>
 				<caller organisation="com.typesafe.play" name="play-ebean_2.12" conf="default, compile, runtime, master" rev="2.6.6" rev-constraint-default="2.6.6" rev-constraint-dynamic="2.6.6" callerrev="4.0.6"/>
 				<artifacts>
-					<artifact name="play-jdbc-evolutions_2.12" type="jar" ext="jar" status="successful" details="" size="120433" time="1349" location="/home/Richard/.ivy2/cache/com.typesafe.play/play-jdbc-evolutions_2.12/jars/play-jdbc-evolutions_2.12-2.6.13.jar">
+					<artifact name="play-jdbc-evolutions_2.12" type="jar" ext="jar" status="no" details="" size="120433" time="0" location="/home/Richard/.ivy2/cache/com.typesafe.play/play-jdbc-evolutions_2.12/jars/play-jdbc-evolutions_2.12-2.6.13.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/play/play-jdbc-evolutions_2.12/2.6.13/play-jdbc-evolutions_2.12-2.6.13.jar"/>
 					</artifact>
 				</artifacts>

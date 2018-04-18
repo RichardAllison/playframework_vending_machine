@@ -1,0 +1,24 @@
+@(item: VendingItem, sale: Sale)
+
+@main("Service Vending Machine") {
+    <dl>
+        <div><dt>Item: @item.getName() - @item.getPrice()</dt><dd id="item-display"></dd></div>
+        <div><dt>Money due: @sale.amountDue()</dt><dd id="due-display"></dd></div>
+        <div><dt>Paid: @sale.getAmountPaid()</dt><dd id="paid-display"></dd></div>
+    </dl>
+    <form id="select-item" action="index.html" method="post">
+        <p>Insert coin:</p>
+        <input type="radio" name="coins" value="nickels" id="nickel">
+        <label for="nickel">Nickel</label>
+        <input type="radio" name="coins" value="dimes" id="dime">
+        <label for="dime">Dime</label>
+        <input type="radio" name="coins" value="quarters" id="quarter">
+        <label for="quarter">Quarter</label>
+        <input type="radio" name="coins" value="dollars" id="dollar">
+        <label for="dollar">Dollar</label>
+    </form>
+
+    <form id="coin-select" action="index.html" method="post">
+        <button type="button" name="button">Return money</button>
+    </form>
+}

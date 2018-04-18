@@ -7,4 +7,8 @@ import play.data.format.*;
 import play.data.validation.*;
 
 public class ServicePerson extends Model {
+
+    private String username;
+    private String password;
+
 }

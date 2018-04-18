@@ -1,0 +1,14 @@
+@(vendingMachine: VendingMachine, total: Double)
+
+@main("Vending Machine") {
+
+    <p>Available change:</p>
+    <p>Nickels: @vendingMachine.getNickels()</p>
+    <p>Dimes: @vendingMachine.getDimes()</p>
+    <p>Quarters: @vendingMachine.getQuarters()</p>
+    <p>Dollars: @vendingMachine.getDollars()</p>
+    <p>Total: @total</p>
+
+    <p><a class="button" href="/service/change/edit">Adjust change</a></p>
+
+}

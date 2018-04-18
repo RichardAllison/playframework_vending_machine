@@ -342,13 +342,13 @@
 				</artifacts>
 			</revision>
 		</module>
-		<module organisation="javax.transaction" name="jta">
+		<module organisation="javax.sale" name="jta">
 			<revision name="1.1" status="release" pubdate="20081028012721" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://java.sun.com/products/jta" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="39">
-				<metadata-artifact status="no" details="" size="2479" time="0" location="/home/Richard/.ivy2/cache/javax.transaction/jta/ivy-1.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/javax/transaction/jta/1.1/jta-1.1.pom"/>
+				<metadata-artifact status="no" details="" size="2479" time="0" location="/home/Richard/.ivy2/cache/javax.sale/jta/ivy-1.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/javax/sale/jta/1.1/jta-1.1.pom"/>
 				<caller organisation="com.typesafe.play" name="play_2.12" conf="compile, runtime" rev="1.1" rev-constraint-default="1.1" rev-constraint-dynamic="1.1" callerrev="2.6.13"/>
 				<artifacts>
-					<artifact name="jta" type="jar" ext="jar" status="no" details="" size="15071" time="0" location="/home/Richard/.ivy2/cache/javax.transaction/jta/jars/jta-1.1.jar">
-						<origin-location is-local="false" location="https://repo1.maven.org/maven2/javax/transaction/jta/1.1/jta-1.1.jar"/>
+					<artifact name="jta" type="jar" ext="jar" status="no" details="" size="15071" time="0" location="/home/Richard/.ivy2/cache/javax.sale/jta/jars/jta-1.1.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/javax/sale/jta/1.1/jta-1.1.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>

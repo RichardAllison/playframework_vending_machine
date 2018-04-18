@@ -4,7 +4,7 @@
 
 @main("Vending Machine") {
 
-    @helper.form(action = routes.ItemController.update(id), 'id -> "item_form") {
+    @helper.form(action = routes.ServiceController.updateItem(id), 'id -> "item_form") {
 
         @helper.inputText(form("name"), '_id -> "name", '_label -> "Name:")
         @helper.inputText(form("price"), '_id -> "price", '_label -> "Price:")

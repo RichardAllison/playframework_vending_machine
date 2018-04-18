@@ -13,7 +13,7 @@ public class VendingItem extends Model {
 
     @Id
     private Long id;
-    @Constraints.Required(message = "Name is required")
+    @Constraints.Required
     private String name;
     @Constraints.Required
     private double price;

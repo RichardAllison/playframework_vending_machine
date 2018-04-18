@@ -2,28 +2,38 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-# An example controller showing a sample home page
+# Home page
 GET     /                               controllers.HomeController.index
++ nocsrf
+POST    /                               controllers.HomeController.newSale()
 
+GET     /sale/:id/item/:itemId          controllers.HomeController.sale(id:Long, itemId:Long)
+
+# service page
 GET     /service                        controllers.ServiceController.index()
 
 # Items list
-GET     /service/items                  controllers.ItemController.index()
+GET     /service/items                  controllers.ServiceController.items()
+GET     /service/change                 controllers.ServiceController.change()
 
 
 # Add item
-GET     /service/items/new              controllers.ItemController.newItem()
+GET     /service/items/new              controllers.ServiceController.newItem()
 + nocsrf
-POST    /service/items                  controllers.ItemController.save()
+POST    /service/items                  controllers.ServiceController.saveItem()
 
 # Edit item
-GET     /service/items/:id              controllers.ItemController.edit(id:Long)
+GET     /service/items/:id              controllers.ServiceController.editItem(id:Long)
 + nocsrf
-POST    /service/items/:id              controllers.ItemController.update(id:Long)
+POST    /service/items/:id              controllers.ServiceController.updateItem(id:Long)
+
+GET     /service/change/edit            controllers.ServiceController.editChange()
++ nocsrf
+POST    /service/change                 controllers.ServiceController.updateChange()
 
 # Delete item
 + nocsrf
-POST    /service/items/:id/delete       controllers.ItemController.delete(id:Long)
+POST    /service/items/:id/delete       controllers.ServiceController.deleteItem(id:Long)
 
 
 # Map static resources from the /public folder to the /assets URL path

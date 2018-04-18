@@ -1,4 +1,3 @@
-[0m[[0m[31merror[0m] [0m[0m/mnt/c/Users/Richard/Desktop/Java Web App/play-project/vendingmachine/app/controllers/ItemController.java:54:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol:   variable setId[0m
-[0m[[0m[31merror[0m] [0m[0m  location: variable updatedItem of type models.VendingItem[0m
-[0m[[0m[31merror[0m] [0m[0m        updatedItem.setId = id;[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/c/Users/Richard/Desktop/Java Web App/play-project/vendingmachine/app/controllers/HomeController.java:40:1:  models.Sale cannot be converted to models.Transaction[0m
+[0m[[0m[31merror[0m] [0m[0m        return ok(views.html.sale.render(item, sale));[0m
+[0m[[0m[0minfo[0m] [0m[0mSome messages have been simplified; recompile with -Xdiags:verbose to get full output[0m
