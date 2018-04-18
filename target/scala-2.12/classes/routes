@@ -8,6 +8,14 @@ GET     /                               controllers.HomeController.index
 POST    /                               controllers.HomeController.newSale()
 
 GET     /sale/:id/item/:itemId          controllers.HomeController.sale(id:Long, itemId:Long)
++ nocsrf
+POST    /sale/:id/item/:itemId/nickel   controllers.HomeController.insertNickel(id:Long, itemId:Long)
++ nocsrf
+POST    /sale/:id/item/:itemId/dime     controllers.HomeController.insertDime(id:Long, itemId:Long)
++ nocsrf
+POST    /sale/:id/item/:itemId/quarter  controllers.HomeController.insertQuarter(id:Long, itemId:Long)
++ nocsrf
+POST    /sale/:id/item/:itemId/dollar   controllers.HomeController.insertDollar(id:Long, itemId:Long)
 
 # service page
 GET     /service                        controllers.ServiceController.index()

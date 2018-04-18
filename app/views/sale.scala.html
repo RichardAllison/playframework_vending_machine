@@ -1,4 +1,4 @@
-@(item: VendingItem, sale: Sale)
+@(sale: Sale, item: VendingItem)
 
 @main("Service Vending Machine") {
     <dl>
@@ -6,17 +6,34 @@
         <div><dt>Money due: @sale.amountDue()</dt><dd id="due-display"></dd></div>
         <div><dt>Paid: @sale.getAmountPaid()</dt><dd id="paid-display"></dd></div>
     </dl>
-    <form id="select-item" action="index.html" method="post">
-        <p>Insert coin:</p>
-        <input type="radio" name="coins" value="nickels" id="nickel">
-        <label for="nickel">Nickel</label>
-        <input type="radio" name="coins" value="dimes" id="dime">
-        <label for="dime">Dime</label>
-        <input type="radio" name="coins" value="quarters" id="quarter">
-        <label for="quarter">Quarter</label>
-        <input type="radio" name="coins" value="dollars" id="dollar">
-        <label for="dollar">Dollar</label>
-    </form>
+
+    <p>Insert coin:</p>
+    <table>
+        <tr>
+            <td>
+                @helper.form(action = routes.HomeController.insertNickel(sale.getId, item.getId), 'id -> "select_coin_form") {
+                    <input type="submit" name="nickels" value="Nickels" id="nickel">
+                }
+
+            </td>
+            <td>
+                @helper.form(action = routes.HomeController.insertDime(sale.getId, item.getId), 'id -> "select_coin_form") {
+                    <input type="submit" name="dimes" value="Dimes" id="dime">
+                }
+            </td>
+            <td>
+                @helper.form(action = routes.HomeController.insertQuarter(sale.getId, item.getId), 'id -> "select_coin_form") {
+                    <input type="submit" name="quarters" value="Quarters" id="quarter">
+                }
+            </td>
+            <td>
+                @helper.form(action = routes.HomeController.insertDollar(sale.getId, item.getId), 'id -> "select_coin_form") {
+                    <input type="submit" name="dollars" value="Dollars" id="dollar">
+                }
+            </td>
+
+        </tr>
+    </table>
 
     <form id="coin-select" action="index.html" method="post">
         <button type="button" name="button">Return money</button>

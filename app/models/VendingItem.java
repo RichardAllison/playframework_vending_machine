@@ -7,6 +7,9 @@ import io.ebean.*;
 import play.data.format.*;
 import play.data.validation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Entity
 public class VendingItem extends Model {

@@ -74,7 +74,7 @@ public class ServiceController extends Controller {
         if (vendingMachine == null){
             vendingMachine = new VendingMachine();
             vendingMachine.setId(1);
-            vendingMachine.setDimes(0);
+            vendingMachine.setDimes(1);
             vendingMachine.setNickels(0);
             vendingMachine.setQuarters(0);
             vendingMachine.setDollars(0);
@@ -101,11 +101,5 @@ public class ServiceController extends Controller {
         updatedVendingMachine.update();
         return index();
     }
-
-
-
-
-
-
 
 }

@@ -7,6 +7,9 @@ import io.ebean.*;
 import play.data.format.*;
 import play.data.validation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 public class VendingMachine extends Model {
 
@@ -16,6 +19,8 @@ public class VendingMachine extends Model {
     private int dimes;
     private int quarters;
     private int dollars;
+    @ManyToMany
+    public List<VendingItem> vendingItems = new ArrayList<VendingItem>();
 
     public static final Finder<Long, VendingMachine> find = new Finder<>(VendingMachine.class);
 
@@ -67,4 +72,12 @@ public class VendingMachine extends Model {
         total += (this.dollars);
         return total;
     }
+
+    public List<VendingItem> getVendingItems() {
+        return vendingItems;
+    }
+
+//    public VendingItem vend(VendingItem item) {
+//
+//    }
 }

@@ -41,7 +41,7 @@ Seq[Any](format.raw/*1.49*/("""
     <p>Dollars: """),_display_(/*9.18*/vendingMachine/*9.32*/.getDollars()),format.raw/*9.45*/("""</p>
     <p>Total: """),_display_(/*10.16*/total),format.raw/*10.21*/("""</p>
 
-    <p><a href="/service/change/edit">Adjust change</a></p>
+    <p><a class="button" href="/service/change/edit">Adjust change</a></p>
 
 """)))}),format.raw/*14.2*/("""
 """))
@@ -60,10 +60,10 @@ Seq[Any](format.raw/*1.49*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Wed Apr 18 13:10:10 GMT 2018
+                  DATE: Wed Apr 18 13:35:28 GMT 2018
                   SOURCE: /mnt/c/Users/Richard/Desktop/Java Web App/play-project/vendingmachine/app/views/change.scala.html
-                  HASH: 78617c0d32761b729ec67a5a316c2d4618dba358
-                  MATRIX: 964->1|1106->48|1136->53|1167->76|1206->78|1240->86|1309->129|1331->143|1364->156|1411->177|1433->191|1464->202|1514->226|1536->240|1570->254|1619->277|1641->291|1674->304|1722->325|1748->330|1850->402
+                  HASH: 45e9cda246dee3ca0bb941fba451201702a44f93
+                  MATRIX: 964->1|1106->48|1136->53|1167->76|1206->78|1240->86|1309->129|1331->143|1364->156|1411->177|1433->191|1464->202|1514->226|1536->240|1570->254|1619->277|1641->291|1674->304|1722->325|1748->330|1865->417
                   LINES: 28->1|33->1|35->3|35->3|35->3|37->5|38->6|38->6|38->6|39->7|39->7|39->7|40->8|40->8|40->8|41->9|41->9|41->9|42->10|42->10|46->14
                   -- GENERATED --
               */

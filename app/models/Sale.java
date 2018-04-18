@@ -21,6 +21,7 @@ public class Sale extends Model  {
     private int quartersPaid;
     private int dollarsPaid;
     private double amountPaid;
+    private boolean complete;
 
     public long getId() {
         return id;
@@ -96,6 +97,14 @@ public class Sale extends Model  {
 
     public double amountDue()  {
         return this.itemPrice - this.amountPaid;
+    }
+
+    public boolean isComplete() {
+        return complete;
+    }
+
+    public void setComplete(boolean complete) {
+        this.complete = complete;
     }
 
     public static final Finder<Long, Sale> find = new Finder<>(Sale.class);

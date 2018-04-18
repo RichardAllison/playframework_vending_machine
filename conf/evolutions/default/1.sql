@@ -13,6 +13,7 @@ create table sale (
   quarters_paid                 integer not null,
   dollars_paid                  integer not null,
   amount_paid                   float not null,
+  complete                      boolean default false not null,
   constraint pk_sale primary key (id)
 );
 
@@ -46,8 +47,26 @@ create table vending_machine (
   constraint pk_vending_machine primary key (id)
 );
 
+create table vending_machine_vending_item (
+  vending_machine_id            bigint not null,
+  vending_item_id               bigint not null,
+  constraint pk_vending_machine_vending_item primary key (vending_machine_id,vending_item_id)
+);
+
+alter table vending_machine_vending_item add constraint fk_vending_machine_vending_item_vending_machine foreign key (vending_machine_id) references vending_machine (id) on delete restrict on update restrict;
+create index ix_vending_machine_vending_item_vending_machine on vending_machine_vending_item (vending_machine_id);
+
+alter table vending_machine_vending_item add constraint fk_vending_machine_vending_item_vending_item foreign key (vending_item_id) references vending_item (id) on delete restrict on update restrict;
+create index ix_vending_machine_vending_item_vending_item on vending_machine_vending_item (vending_item_id);
+
 
 # --- !Downs
+
+alter table if exists vending_machine_vending_item drop constraint if exists fk_vending_machine_vending_item_vending_machine;
+drop index if exists ix_vending_machine_vending_item_vending_machine;
+
+alter table if exists vending_machine_vending_item drop constraint if exists fk_vending_machine_vending_item_vending_item;
+drop index if exists ix_vending_machine_vending_item_vending_item;
 
 drop table if exists sale cascade;
 
@@ -56,4 +75,6 @@ drop table if exists transaction cascade;
 drop table if exists vending_item cascade;
 
 drop table if exists vending_machine cascade;
+
+drop table if exists vending_machine_vending_item cascade;
 
