@@ -4,6 +4,7 @@ import models.VendingItem;
 import models.VendingMachine;
 import play.mvc.*;
 
+import java.math.BigDecimal;
 import java.util.List;
 import javax.inject.Inject;
 import play.data.Form;
@@ -83,8 +84,7 @@ public class ServiceController extends Controller {
             vendingMachine.setId(1);
             vendingMachine.save();
         }
-        double total = vendingMachine.calculateTotal();
-        return ok(views.html.change.render(vendingMachine, total));
+        return ok(views.html.change.render(vendingMachine));
     }
 
     public Result editChange() {

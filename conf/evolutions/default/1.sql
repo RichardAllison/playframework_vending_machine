@@ -7,12 +7,11 @@ create table sale (
   id                            bigserial not null,
   time                          timestamptz,
   item_id                       integer not null,
-  item_price                    float not null,
+  item_price                    decimal(38),
   nickels_paid                  integer not null,
   dimes_paid                    integer not null,
   quarters_paid                 integer not null,
   dollars_paid                  integer not null,
-  amount_paid                   float not null,
   complete                      boolean default false not null,
   constraint pk_sale primary key (id)
 );
@@ -33,7 +32,7 @@ create table transaction (
 create table vending_item (
   id                            bigserial not null,
   name                          varchar(255),
-  price                         float not null,
+  price                         decimal(38),
   quantity                      integer not null,
   constraint pk_vending_item primary key (id)
 );

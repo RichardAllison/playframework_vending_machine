@@ -2,23 +2,24 @@
 
 @main("Vending Machine") {
     <h1>Vending Machine</h1>
-    <p>Select item:</p>
-    <table>
-        <tbody>
+    @if(items.isEmpty) {
+        <h3>Out of stock!</h3>
+    } else {
+        <p>Select item:</p>
         @helper.form(action = routes.HomeController.newSale(), 'id -> "select_item_form") {
-            @for(item <- items) {
-                <tr>
-                    <td><input type="radio" name="itemId" value=@item.getId id="item-@item.getId"></td>
-                    <td><label for="item-@item.getId">@item.getName - $@item.getPrice</label></td>
-                </tr>
-            }
-            </tbody>
-            <tfoot>
-                <tr>
+            <table>
+                <tbody>
+                @for(item <- items) {
+                    <tr>
+                        <td><input type="radio" name="itemId" value=@item.getId id="item-@item.getId"></td>
+                        <td><label for="item-@item.getId">@item.getName - $@item.getPrice</label></td>
+                    </tr>
+                }
+                </tbody>
+                <tfoot>
                     <td colspan="2"><input type="submit" name="select-item-submit" id="select-item-submit" value="Select"></td>
-                </tr>
-            </tfoot>
+                </tfoot>
+            </table>
         }
-    </table>
-
+    }
 }

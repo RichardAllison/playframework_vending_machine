@@ -1,13 +1,13 @@
-@(vendingMachine: VendingMachine, total: Double)
+@(vendingMachine: VendingMachine)
 
-@main("Vending Machine") {
+@main("Vending Machine Change") {
 
     <p>Available change:</p>
     <p>Nickels: @vendingMachine.getNickels()</p>
     <p>Dimes: @vendingMachine.getDimes()</p>
     <p>Quarters: @vendingMachine.getQuarters()</p>
     <p>Dollars: @vendingMachine.getDollars()</p>
-    <p>Total: @total</p>
+    <p>Total: $@vendingMachine.calculateTotal</p>
 
     <p><a class="button" href="/service/change/edit">Adjust change</a></p>
 

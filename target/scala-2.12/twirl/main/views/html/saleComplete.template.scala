@@ -32,10 +32,12 @@ object saleComplete extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.a
 
 Seq[Any](format.raw/*1.33*/("""
 
-"""),_display_(/*3.2*/main("Service Vending Machine")/*3.33*/ {_display_(Seq[Any](format.raw/*3.35*/("""
+"""),_display_(/*3.2*/main("Sale Complete")/*3.23*/ {_display_(Seq[Any](format.raw/*3.25*/("""
 """),format.raw/*4.1*/("""<h3>Purchase complete</h3>
     <dl>
         <div><dt>"""),_display_(/*6.19*/item/*6.23*/.getName()),format.raw/*6.33*/("""</dt><dd id="item-display"></dd></div>
+        <div><dt>Price: $"""),_display_(/*7.27*/item/*7.31*/.getPrice()),format.raw/*7.42*/("""</dt><dd id="due-display"></dd></div>
+        <div><dt>Paid: $"""),_display_(/*8.26*/sale/*8.30*/.amountTotal()),format.raw/*8.44*/("""</dt><dd id="paid-display"></dd></div>
     </dl>
 
 """)))}))
@@ -54,11 +56,11 @@ Seq[Any](format.raw/*1.33*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Wed Apr 18 20:25:58 GMT 2018
+                  DATE: Thu Apr 19 11:48:12 GMT 2018
                   SOURCE: /mnt/c/Users/Richard/Desktop/Java Web App/play-project/vendingmachine/app/views/saleComplete.scala.html
-                  HASH: af8205e66c08e4b6393f168ca24ea7bce52a6bc0
-                  MATRIX: 965->1|1091->32|1121->37|1160->68|1199->70|1227->72|1309->128|1321->132|1351->142
-                  LINES: 28->1|33->1|35->3|35->3|35->3|36->4|38->6|38->6|38->6
+                  HASH: ec92d1eec94114bf67dc7e6f032deaf3c0d4076c
+                  MATRIX: 965->1|1091->32|1121->37|1150->58|1189->60|1217->62|1299->118|1311->122|1341->132|1433->198|1445->202|1476->213|1566->277|1578->281|1612->295
+                  LINES: 28->1|33->1|35->3|35->3|35->3|36->4|38->6|38->6|38->6|39->7|39->7|39->7|40->8|40->8|40->8
                   -- GENERATED --
               */
           

@@ -1,10 +1,10 @@
 @(sale: Sale, item: VendingItem)
 
-@main("Service Vending Machine") {
+@main("Ongoing Sale") {
     <dl>
-        <div><dt>Item: @item.getName() - @item.getPrice()</dt><dd id="item-display"></dd></div>
-        <div><dt>Money due: @sale.amountDue()</dt><dd id="due-display"></dd></div>
-        <div><dt>Paid: @sale.getAmountPaid()</dt><dd id="paid-display"></dd></div>
+        <div><dt>Item: @item.getName() - $@item.getPrice()</dt><dd id="item-display"></dd></div>
+        <div><dt>Money due: $@sale.amountDue()</dt><dd id="due-display"></dd></div>
+        <div><dt>Paid: $@sale.amountTotal()</dt><dd id="paid-display"></dd></div>
     </dl>
 
     <p>Insert coin:</p>

@@ -34,7 +34,7 @@ object editItem extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.H
 Seq[Any](format.raw/*1.56*/("""
 
 """),format.raw/*4.1*/("""
-"""),_display_(/*5.2*/main("Vending Machine")/*5.25*/ {_display_(Seq[Any](format.raw/*5.27*/("""
+"""),_display_(/*5.2*/main("Edit Vending Item")/*5.27*/ {_display_(Seq[Any](format.raw/*5.29*/("""
 
     """),_display_(/*7.6*/helper/*7.12*/.form(action = routes.ServiceController.updateItem(id), 'id -> "item_form")/*7.87*/ {_display_(Seq[Any](format.raw/*7.89*/("""
 
@@ -61,10 +61,10 @@ Seq[Any](format.raw/*1.56*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Wed Apr 18 13:07:25 GMT 2018
+                  DATE: Thu Apr 19 11:48:12 GMT 2018
                   SOURCE: /mnt/c/Users/Richard/Desktop/Java Web App/play-project/vendingmachine/app/views/editItem.scala.html
-                  HASH: d8c22a5c4f450a8a890cfd58ff48ac3e02bc9d0d
-                  MATRIX: 979->1|1106->60|1157->55|1187->83|1215->86|1246->109|1285->111|1319->120|1333->126|1416->201|1455->203|1494->216|1508->222|1588->282|1626->293|1641->299|1725->362|1763->373|1778->379|1871->451|1910->463|2010->533
+                  HASH: b23cac7f501758b95b63ac37bcb5e4496188ed7b
+                  MATRIX: 979->1|1106->60|1157->55|1187->83|1215->86|1248->111|1287->113|1321->122|1335->128|1418->203|1457->205|1496->218|1510->224|1590->284|1628->295|1643->301|1727->364|1765->375|1780->381|1873->453|1912->465|2012->535
                   LINES: 28->1|31->3|34->1|36->4|37->5|37->5|37->5|39->7|39->7|39->7|39->7|41->9|41->9|41->9|42->10|42->10|42->10|43->11|43->11|43->11|45->13|46->14
                   -- GENERATED --
               */

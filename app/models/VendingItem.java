@@ -7,6 +7,7 @@ import io.ebean.*;
 import play.data.format.*;
 import play.data.validation.*;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +20,7 @@ public class VendingItem extends Model {
     @Constraints.Required
     private String name;
     @Constraints.Required
-    private double price;
+    private BigDecimal price;
     @Constraints.Required
     private int quantity;
     @ManyToMany
@@ -43,11 +44,11 @@ public class VendingItem extends Model {
         return this.name;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
-    public double getPrice() {
+    public BigDecimal getPrice() {
         return this.price;
     }
 

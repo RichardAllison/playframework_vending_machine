@@ -34,7 +34,7 @@ object editChange extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api
 Seq[Any](format.raw/*1.62*/("""
 
 """),format.raw/*4.1*/("""
-"""),_display_(/*5.2*/main("Vending Machine")/*5.25*/ {_display_(Seq[Any](format.raw/*5.27*/("""
+"""),_display_(/*5.2*/main("Edit Vending Machine Change")/*5.37*/ {_display_(Seq[Any](format.raw/*5.39*/("""
 
     """),_display_(/*7.6*/helper/*7.12*/.form(action = routes.ServiceController.updateChange(), 'id -> "item_form")/*7.87*/ {_display_(Seq[Any](format.raw/*7.89*/("""
 
@@ -62,10 +62,10 @@ Seq[Any](format.raw/*1.62*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Wed Apr 18 13:10:10 GMT 2018
+                  DATE: Thu Apr 19 11:48:12 GMT 2018
                   SOURCE: /mnt/c/Users/Richard/Desktop/Java Web App/play-project/vendingmachine/app/views/editChange.scala.html
-                  HASH: cfa25d0156c1e9b2f87a7c4f5b68a90f4e20e9b3
-                  MATRIX: 982->1|1115->66|1166->61|1196->89|1224->92|1255->115|1294->117|1328->126|1342->132|1425->207|1464->209|1503->222|1517->228|1606->297|1644->308|1659->314|1743->377|1781->388|1796->394|1889->466|1927->477|1942->483|2032->552|2071->564|2171->634
+                  HASH: 220c666eb1e0768ea82c6b4467f6dc28c08a33b6
+                  MATRIX: 982->1|1115->66|1166->61|1196->89|1224->92|1267->127|1306->129|1340->138|1354->144|1437->219|1476->221|1515->234|1529->240|1618->309|1656->320|1671->326|1755->389|1793->400|1808->406|1901->478|1939->489|1954->495|2044->564|2083->576|2183->646
                   LINES: 28->1|31->3|34->1|36->4|37->5|37->5|37->5|39->7|39->7|39->7|39->7|41->9|41->9|41->9|42->10|42->10|42->10|43->11|43->11|43->11|44->12|44->12|44->12|46->14|47->15
                   -- GENERATED --
               */

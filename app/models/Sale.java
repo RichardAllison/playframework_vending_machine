@@ -1,11 +1,13 @@
 package models;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 import io.ebean.*;
 import play.data.format.*;
 import play.data.validation.*;
 
+import java.math.MathContext;
 import java.util.Date;
 
 @Entity
@@ -15,12 +17,11 @@ public class Sale extends Model  {
     private long id;
     private Date time;
     private int itemId;
-    private double itemPrice;
+    private BigDecimal itemPrice;
     private int nickelsPaid;
     private int dimesPaid;
     private int quartersPaid;
     private int dollarsPaid;
-    private double amountPaid;
     private boolean complete;
 
     public long getId() {
@@ -47,11 +48,11 @@ public class Sale extends Model  {
         this.itemId = itemId;
     }
 
-    public double getItemPrice() {
+    public BigDecimal getItemPrice() {
         return itemPrice;
     }
 
-    public void setItemPrice(double itemPrice) {
+    public void setItemPrice(BigDecimal itemPrice) {
         this.itemPrice = itemPrice;
     }
 
@@ -87,16 +88,41 @@ public class Sale extends Model  {
         this.dollarsPaid = dollarsPaid;
     }
 
-    public double getAmountPaid() {
-        return amountPaid;
+//    public BigDecimal getAmountPaid() {
+//        return amountPaid;
+//    }
+
+    public BigDecimal amountTotal() {
+        MathContext mc = new MathContext(2);
+
+        BigDecimal total = new BigDecimal(0, mc);
+
+        BigDecimal nickelValue = new BigDecimal(0.05, mc);
+        BigDecimal dimeValue = new BigDecimal(0.10, mc);
+        BigDecimal quarterValue = new BigDecimal(0.25, mc);
+        BigDecimal dollarValue = new BigDecimal(1.00, mc);
+
+        total = total.add(new BigDecimal(this.nickelsPaid, mc).multiply(nickelValue));
+        total = total.add(new BigDecimal(this.dimesPaid, mc).multiply(dimeValue));
+        total = total.add(new BigDecimal(this.quartersPaid, mc).multiply(quarterValue));
+        total = total.add(new BigDecimal(this.dollarsPaid, mc).multiply(dollarValue));
+
+        return total;
     }
 
-    public void setAmountPaid(double amountPaid) {
-        this.amountPaid = amountPaid;
-    }
+//    public void setAmountPaid(BigDecimal amountPaid) {
+//        this.amountPaid = amountPaid;
+//    }
 
-    public double amountDue()  {
-        return this.itemPrice - this.amountPaid;
+    public BigDecimal amountDue()  {
+        MathContext mc = new MathContext(2);
+//        if (this.amountPaid==null) {
+//            this.amountPaid = new BigDecimal(0);
+//        }
+
+//        return this.itemPrice.subtract(this.amountPaid, mc);
+        BigDecimal amountPaid = amountTotal();
+        return this.itemPrice.subtract(amountPaid);
     }
 
     public boolean isComplete() {
