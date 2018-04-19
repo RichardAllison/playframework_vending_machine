@@ -35,8 +35,9 @@ Seq[Any](format.raw/*1.4*/("""
 """),_display_(/*3.2*/main("Service Vending Machine")/*3.33*/ {_display_(Seq[Any](format.raw/*3.35*/("""
     """),format.raw/*4.5*/("""<h1>Service</h1>
 
-<a class="button" href="service/items">items</a>
-<a class="button" href="service/change">change</a>
+    <a class="button" href="service/items">Items</a>
+    <a class="button" href="service/change">Change</a>
+    <a class="button" href="service/sales">Sales</a>
 """)))}))
       }
     }
@@ -53,9 +54,9 @@ Seq[Any](format.raw/*1.4*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Wed Apr 18 13:35:28 GMT 2018
+                  DATE: Thu Apr 19 09:28:43 GMT 2018
                   SOURCE: /mnt/c/Users/Richard/Desktop/Java Web App/play-project/vendingmachine/app/views/service.scala.html
-                  HASH: 15a46f3ddafb141abac571faf11a350a013839de
+                  HASH: 3fff9a9c6e76d1ade9bd1171080e431414b63c21
                   MATRIX: 943->1|1039->3|1069->8|1108->39|1147->41|1179->47
                   LINES: 28->1|33->1|35->3|35->3|35->3|36->4
                   -- GENERATED --

@@ -38,6 +38,12 @@ create table vending_item (
   constraint pk_vending_item primary key (id)
 );
 
+create table vending_item_vending_machine (
+  vending_item_id               bigint not null,
+  vending_machine_id            bigint not null,
+  constraint pk_vending_item_vending_machine primary key (vending_item_id,vending_machine_id)
+);
+
 create table vending_machine (
   id                            bigserial not null,
   nickels                       integer not null,
@@ -47,26 +53,20 @@ create table vending_machine (
   constraint pk_vending_machine primary key (id)
 );
 
-create table vending_machine_vending_item (
-  vending_machine_id            bigint not null,
-  vending_item_id               bigint not null,
-  constraint pk_vending_machine_vending_item primary key (vending_machine_id,vending_item_id)
-);
+alter table vending_item_vending_machine add constraint fk_vending_item_vending_machine_vending_item foreign key (vending_item_id) references vending_item (id) on delete restrict on update restrict;
+create index ix_vending_item_vending_machine_vending_item on vending_item_vending_machine (vending_item_id);
 
-alter table vending_machine_vending_item add constraint fk_vending_machine_vending_item_vending_machine foreign key (vending_machine_id) references vending_machine (id) on delete restrict on update restrict;
-create index ix_vending_machine_vending_item_vending_machine on vending_machine_vending_item (vending_machine_id);
-
-alter table vending_machine_vending_item add constraint fk_vending_machine_vending_item_vending_item foreign key (vending_item_id) references vending_item (id) on delete restrict on update restrict;
-create index ix_vending_machine_vending_item_vending_item on vending_machine_vending_item (vending_item_id);
+alter table vending_item_vending_machine add constraint fk_vending_item_vending_machine_vending_machine foreign key (vending_machine_id) references vending_machine (id) on delete restrict on update restrict;
+create index ix_vending_item_vending_machine_vending_machine on vending_item_vending_machine (vending_machine_id);
 
 
 # --- !Downs
 
-alter table if exists vending_machine_vending_item drop constraint if exists fk_vending_machine_vending_item_vending_machine;
-drop index if exists ix_vending_machine_vending_item_vending_machine;
+alter table if exists vending_item_vending_machine drop constraint if exists fk_vending_item_vending_machine_vending_item;
+drop index if exists ix_vending_item_vending_machine_vending_item;
 
-alter table if exists vending_machine_vending_item drop constraint if exists fk_vending_machine_vending_item_vending_item;
-drop index if exists ix_vending_machine_vending_item_vending_item;
+alter table if exists vending_item_vending_machine drop constraint if exists fk_vending_item_vending_machine_vending_machine;
+drop index if exists ix_vending_item_vending_machine_vending_machine;
 
 drop table if exists sale cascade;
 
@@ -74,7 +74,7 @@ drop table if exists transaction cascade;
 
 drop table if exists vending_item cascade;
 
-drop table if exists vending_machine cascade;
+drop table if exists vending_item_vending_machine cascade;
 
-drop table if exists vending_machine_vending_item cascade;
+drop table if exists vending_machine cascade;
 

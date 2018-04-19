@@ -22,6 +22,8 @@ public class VendingItem extends Model {
     private double price;
     @Constraints.Required
     private int quantity;
+    @ManyToMany
+    private List<VendingMachine> vendingMachines = new ArrayList<VendingMachine>();
 
     public static final Finder<Long, VendingItem> find = new Finder<>(VendingItem.class);
 
@@ -57,5 +59,12 @@ public class VendingItem extends Model {
         return this.quantity;
     }
 
+    public List<VendingMachine> getVendingMachines() {
+        return vendingMachines;
+    }
+
+    public void addVendingMachine(VendingMachine vendingMachine) {
+        this.vendingMachines.add(vendingMachine);
+    }
 }
 

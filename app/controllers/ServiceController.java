@@ -38,7 +38,14 @@ public class ServiceController extends Controller {
             return badRequest(views.html.newItem.render(itemForm));
         }
 
+        VendingMachine vendingMachine = VendingMachine.find.byId(1L);
+        if (vendingMachine == null) {
+            vendingMachine = new VendingMachine();
+            vendingMachine.setId(1);
+            vendingMachine.save();
+        }
         VendingItem item = itemForm.get();
+        item.addVendingMachine(vendingMachine);
         item.save();
         return items();
     }

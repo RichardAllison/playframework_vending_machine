@@ -19,8 +19,8 @@ public class VendingMachine extends Model {
     private int dimes;
     private int quarters;
     private int dollars;
-    @ManyToMany
-    public List<VendingItem> vendingItems = new ArrayList<VendingItem>();
+    @ManyToMany(mappedBy="vendingMachines")
+    private List<VendingItem> vendingItems = new ArrayList<VendingItem>();
 
     public static final Finder<Long, VendingMachine> find = new Finder<>(VendingMachine.class);
 
@@ -74,7 +74,11 @@ public class VendingMachine extends Model {
     }
 
     public List<VendingItem> getVendingItems() {
-        return vendingItems;
+        return this.vendingItems;
+    }
+
+    public void addVendingItem(VendingItem vendingItem) {
+        this.vendingItems.add(vendingItem);
     }
 
     public VendingItem vend(long id) {
