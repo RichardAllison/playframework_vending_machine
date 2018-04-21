@@ -34,14 +34,14 @@ Seq[Any](format.raw/*1.34*/("""
 
 """),_display_(/*3.2*/main("Vending Machine Change")/*3.32*/ {_display_(Seq[Any](format.raw/*3.34*/("""
 
-    """),format.raw/*5.5*/("""<p>Available change:</p>
-    <p>Nickels: """),_display_(/*6.18*/vendingMachine/*6.32*/.getNickels()),format.raw/*6.45*/("""</p>
-    <p>Dimes: """),_display_(/*7.16*/vendingMachine/*7.30*/.getDimes()),format.raw/*7.41*/("""</p>
-    <p>Quarters: """),_display_(/*8.19*/vendingMachine/*8.33*/.getQuarters()),format.raw/*8.47*/("""</p>
-    <p>Dollars: """),_display_(/*9.18*/vendingMachine/*9.32*/.getDollars()),format.raw/*9.45*/("""</p>
-    <p>Total: $"""),_display_(/*10.17*/vendingMachine/*10.31*/.calculateTotal),format.raw/*10.46*/("""</p>
+"""),format.raw/*5.1*/("""<p>Available change:</p>
+<p>Nickels: """),_display_(/*6.14*/vendingMachine/*6.28*/.getNickels()),format.raw/*6.41*/("""</p>
+<p>Dimes: """),_display_(/*7.12*/vendingMachine/*7.26*/.getDimes()),format.raw/*7.37*/("""</p>
+<p>Quarters: """),_display_(/*8.15*/vendingMachine/*8.29*/.getQuarters()),format.raw/*8.43*/("""</p>
+<p>Dollars: """),_display_(/*9.14*/vendingMachine/*9.28*/.getDollars()),format.raw/*9.41*/("""</p>
+<p>Total: $"""),_display_(/*10.13*/vendingMachine/*10.27*/.calculateTotal),format.raw/*10.42*/("""</p>
 
-    <p><a class="button" href="/service/change/edit">Adjust change</a></p>
+<p><a class="button" href="/service/change/edit">Adjust change</a></p>
 
 """)))}),format.raw/*14.2*/("""
 """))
@@ -60,10 +60,10 @@ Seq[Any](format.raw/*1.34*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Thu Apr 19 11:48:12 GMT 2018
-                  SOURCE: /mnt/c/Users/Richard/Desktop/Java Web App/play-project/vendingmachine/app/views/change.scala.html
-                  HASH: 2917a986cbc132b7f65dcc3c4728319c8fd3c043
-                  MATRIX: 957->1|1084->33|1114->38|1152->68|1191->70|1225->78|1294->121|1316->135|1349->148|1396->169|1418->183|1449->194|1499->218|1521->232|1555->246|1604->269|1626->283|1659->296|1708->318|1731->332|1767->347|1884->434
+                  DATE: Sat Apr 21 22:20:07 GMT 2018
+                  SOURCE: /mnt/c/Users/Richard/Desktop/vendingmachine/vendingmachine/app/views/change.scala.html
+                  HASH: 9e586f20a03b6046433563827266649ad7ed8d7c
+                  MATRIX: 957->1|1084->33|1114->38|1152->68|1191->70|1221->74|1286->113|1308->127|1341->140|1384->157|1406->171|1437->182|1483->202|1505->216|1539->230|1584->249|1606->263|1639->276|1684->294|1707->308|1743->323|1856->406
                   LINES: 28->1|33->1|35->3|35->3|35->3|37->5|38->6|38->6|38->6|39->7|39->7|39->7|40->8|40->8|40->8|41->9|41->9|41->9|42->10|42->10|42->10|46->14
                   -- GENERATED --
               */

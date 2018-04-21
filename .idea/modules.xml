@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.g8/form/form.iml" filepath="$PROJECT_DIR$/.g8/form/form.iml" />
-      <module fileurl="file://$PROJECT_DIR$/target/scala-2.12/routes/routes.iml" filepath="$PROJECT_DIR$/target/scala-2.12/routes/routes.iml" />
       <module fileurl="file://$PROJECT_DIR$/vendingmachine.iml" filepath="$PROJECT_DIR$/vendingmachine.iml" />
     </modules>
   </component>

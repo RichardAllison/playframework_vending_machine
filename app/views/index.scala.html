@@ -9,12 +9,12 @@
         @helper.form(action = routes.HomeController.newSale(), 'id -> "select_item_form") {
             <table>
                 <tbody>
-                @for(item <- items) {
-                    <tr>
-                        <td><input type="radio" name="itemId" value=@item.getId id="item-@item.getId"></td>
-                        <td><label for="item-@item.getId">@item.getName - $@item.getPrice</label></td>
-                    </tr>
-                }
+                    @for(item <- items) {
+                        <tr>
+                            <td><input type="radio" name="itemId" value=@item.getId id="item-@item.getId"></td>
+                            <td><label for="item-@item.getId">@item.getName - $@item.getPrice</label></td>
+                        </tr>
+                    }
                 </tbody>
                 <tfoot>
                     <td colspan="2"><input type="submit" name="select-item-submit" id="select-item-submit" value="Select"></td>

@@ -4,10 +4,10 @@
 		module="vendingmachine_2.12"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20180418131751"
+		publication="20180421215437"
 	>
 		<description>
-		VendingMachine
+		vendingmachine
 		</description>
 	</info>
 	<configurations>
@@ -53,7 +53,6 @@
 		<dependency org="com.typesafe.play" name="play-akka-http-server_2.12" rev="2.6.13" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-guice_2.12" rev="2.6.13" conf="compile->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-jdbc_2.12" rev="2.6.13" conf="compile->default(compile)"/>
-		<dependency org="org.postgresql" name="postgresql" rev="9.4-1206-jdbc42" conf="compile->default(compile)"/>
-		<dependency org="com.typesafe.play" name="play-jdbc-evolutions_2.12" rev="2.6.13" conf="compile->default(compile)"/>
+		<dependency org="org.xerial" name="sqlite-jdbc" rev="3.20.0" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>

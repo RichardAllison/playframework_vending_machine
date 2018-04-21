@@ -62,8 +62,8 @@ Seq[Any](format.raw/*1.62*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Thu Apr 19 11:48:12 GMT 2018
-                  SOURCE: /mnt/c/Users/Richard/Desktop/Java Web App/play-project/vendingmachine/app/views/editChange.scala.html
+                  DATE: Sat Apr 21 22:20:08 GMT 2018
+                  SOURCE: /mnt/c/Users/Richard/Desktop/vendingmachine/vendingmachine/app/views/editChange.scala.html
                   HASH: 220c666eb1e0768ea82c6b4467f6dc28c08a33b6
                   MATRIX: 982->1|1115->66|1166->61|1196->89|1224->92|1267->127|1306->129|1340->138|1354->144|1437->219|1476->221|1515->234|1529->240|1618->309|1656->320|1671->326|1755->389|1793->400|1808->406|1901->478|1939->489|1954->495|2044->564|2083->576|2183->646
                   LINES: 28->1|31->3|34->1|36->4|37->5|37->5|37->5|39->7|39->7|39->7|39->7|41->9|41->9|41->9|42->10|42->10|42->10|43->11|43->11|43->11|44->12|44->12|44->12|46->14|47->15

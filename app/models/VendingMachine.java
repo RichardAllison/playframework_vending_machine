@@ -20,7 +20,7 @@ public class VendingMachine extends Model {
     private int dimes;
     private int quarters;
     private int dollars;
-    @ManyToMany(mappedBy="vendingMachines")
+    @OneToMany(mappedBy="vendingMachine")
     private List<VendingItem> vendingItems = new ArrayList<VendingItem>();
 
     public static final Finder<Long, VendingMachine> find = new Finder<>(VendingMachine.class);

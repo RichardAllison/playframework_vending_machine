@@ -1,7 +1,7 @@
 @(sale: Sale, item: VendingItem)
 
 @main("Sale Complete") {
-<h3>Purchase complete</h3>
+    <h3>Purchase complete</h3>
     <dl>
         <div><dt>@item.getName()</dt><dd id="item-display"></dd></div>
         <div><dt>Price: $@item.getPrice()</dt><dd id="due-display"></dd></div>

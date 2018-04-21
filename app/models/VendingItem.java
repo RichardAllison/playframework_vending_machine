@@ -1,5 +1,4 @@
 package models;
-
 import javax.persistence.*;
 
 import io.ebean.*;
@@ -16,14 +15,11 @@ public class VendingItem extends Model {
 
     @Id
     private Long id;
-    @Constraints.Required
     private String name;
-    @Constraints.Required
     private BigDecimal price;
-    @Constraints.Required
     private int quantity;
-    @ManyToMany
-    private List<VendingMachine> vendingMachines = new ArrayList<VendingMachine>();
+    @ManyToOne
+    private VendingMachine vendingMachine = new VendingMachine();
 
     public static final Finder<Long, VendingItem> find = new Finder<>(VendingItem.class);
 
@@ -59,12 +55,11 @@ public class VendingItem extends Model {
         return this.quantity;
     }
 
-    public List<VendingMachine> getVendingMachines() {
-        return vendingMachines;
+    public VendingMachine getVendingMachine() {
+        return vendingMachine;
     }
 
     public void addVendingMachine(VendingMachine vendingMachine) {
-        this.vendingMachines.add(vendingMachine);
+        this.vendingMachine = vendingMachine;
     }
 }
-

@@ -11,8 +11,7 @@ import java.math.MathContext;
 import java.util.Date;
 
 @Entity
-public class Sale extends Model  {
-
+public class Sale extends Model {
     @Id
     private long id;
     private Date time;
@@ -121,4 +120,5 @@ public class Sale extends Model  {
     }
 
     public static final Finder<Long, Sale> find = new Finder<>(Sale.class);
+
 }

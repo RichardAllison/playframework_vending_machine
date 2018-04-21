@@ -1,4 +1,4 @@
-name := """VendingMachine"""
+name := """vendingmachine"""
 organization := "com.richardallison"
 
 version := "1.0-SNAPSHOT"
@@ -9,5 +9,4 @@ scalaVersion := "2.12.4"
 
 libraryDependencies += guice
 libraryDependencies += jdbc
-libraryDependencies += "org.postgresql" % "postgresql" % "9.4-1206-jdbc42"
-libraryDependencies += evolutions
+libraryDependencies += "org.xerial" % "sqlite-jdbc" % "3.20.0"
