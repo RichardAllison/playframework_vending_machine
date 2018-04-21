@@ -2,6 +2,7 @@ package controllers;
 
 import models.VendingItem;
 import models.VendingMachine;
+import models.Sale;
 import play.mvc.*;
 
 import java.math.BigDecimal;
@@ -103,6 +104,11 @@ public class ServiceController extends Controller {
         updatedVendingMachine.setId(1L);
         updatedVendingMachine.update();
         return index();
+    }
+
+    public Result sales() {
+        List<Sale> sales = Sale.find.all();
+        return ok(views.html.sales.render(sales));
     }
 
 }

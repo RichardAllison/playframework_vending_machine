@@ -88,10 +88,6 @@ public class Sale extends Model  {
         this.dollarsPaid = dollarsPaid;
     }
 
-//    public BigDecimal getAmountPaid() {
-//        return amountPaid;
-//    }
-
     public BigDecimal amountTotal() {
         MathContext mc = new MathContext(2);
 
@@ -107,20 +103,11 @@ public class Sale extends Model  {
         total = total.add(new BigDecimal(this.quartersPaid, mc).multiply(quarterValue));
         total = total.add(new BigDecimal(this.dollarsPaid, mc).multiply(dollarValue));
 
-        return total;
+        return total.setScale(2);
     }
-
-//    public void setAmountPaid(BigDecimal amountPaid) {
-//        this.amountPaid = amountPaid;
-//    }
 
     public BigDecimal amountDue()  {
         MathContext mc = new MathContext(2);
-//        if (this.amountPaid==null) {
-//            this.amountPaid = new BigDecimal(0);
-//        }
-
-//        return this.itemPrice.subtract(this.amountPaid, mc);
         BigDecimal amountPaid = amountTotal();
         return this.itemPrice.subtract(amountPaid);
     }

@@ -6,7 +6,6 @@ import models.VendingMachine;
 import play.mvc.*;
 
 import java.math.BigDecimal;
-import java.math.MathContext;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -46,7 +45,7 @@ public class HomeController extends Controller {
     public Result sale(long id, long itemId) {
         Sale sale = Sale.find.byId(id);
         VendingItem item = VendingItem.find.byId(itemId);
-        if (sale.amountDue().compareTo(new BigDecimal(0)) <= 0) {
+        if (sale.amountDue().compareTo(BigDecimal.valueOf(0)) <= 0) {
             VendingMachine vendingMachine = VendingMachine.find.byId(1L);
             sale.setComplete(true);
             sale.save();
@@ -154,6 +153,14 @@ public class HomeController extends Controller {
         coinsReturned.put("Dollars", dollarsPaid);
 
         return ok(views.html.saleReturnCoins.render(sale, item, coinsReturned));
+    }
+
+    public Result deleteSale(long id) {
+        Sale sale = Sale.find.byId(id);
+        if (sale != null) {
+            sale.delete();
+        }
+        return index();
     }
 
 }

@@ -37,6 +37,7 @@ Seq[Any](format.raw/*1.4*/("""
 
     <a class="button" href="service/items">Items</a>
     <a class="button" href="service/change">Change</a>
+    <a class="button" href="service/sales">Sales</a>
 
 """)))}))
       }
@@ -54,9 +55,9 @@ Seq[Any](format.raw/*1.4*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Thu Apr 19 11:49:06 GMT 2018
+                  DATE: Thu Apr 19 22:13:41 GMT 2018
                   SOURCE: /mnt/c/Users/Richard/Desktop/Java Web App/play-project/vendingmachine/app/views/service.scala.html
-                  HASH: 5c823af55b9efb81e7bab90efd434e5798ea6196
+                  HASH: 277f042cb095c9a7682cc288bc32dce34d2d59bd
                   MATRIX: 943->1|1039->3|1069->8|1108->39|1147->41|1179->47
                   LINES: 28->1|33->1|35->3|35->3|35->3|36->4
                   -- GENERATED --

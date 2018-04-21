@@ -1,0 +1,34 @@
+@(sales: java.util.List[Sale])
+
+@main("Vending Machine Sales") {
+
+<table id='items_list' class="table">
+
+    <thead>
+    <tr class="table">
+        <th>Time</th>
+        <th>Item</th>
+        <th>Price</th>
+        <th>Paid</th>
+        <th>Complete</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    @for(sale <- sales) {
+    <tr>
+        <td>@sale.getTime()</td>
+        <td>getItem()</td>
+        <td>getItem().getPrice()</td>
+        <td>$@sale.amountTotal()</td>
+        <td>@sale.isComplete()</td>
+        <td>
+            <form action="/sale/:id/item/delete" method="POST">
+                <input type="submit" value="Delete">
+            </form>
+        </td>
+    </tr>
+    }
+    </tbody>
+</table>
+}

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/mnt/c/Users/Richard/Desktop/Java Web App/play-project/vendingmachine/conf/routes
-// @DATE:Wed Apr 18 20:02:20 GMT 2018
+// @DATE:Thu Apr 19 22:16:03 GMT 2018
 
 import play.api.mvc.Call
 
@@ -11,14 +11,14 @@ import _root_.play.libs.F
 // @LINE:6
 package controllers {
 
-  // @LINE:23
+  // @LINE:25
   class ReverseServiceController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:27
+    // @LINE:45
     def change(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "service/change")
@@ -36,7 +36,7 @@ package controllers {
       Call("POST", _prefix + { _defaultPrefix } + "service/items/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("id", id)))
     }
   
-    // @LINE:40
+    // @LINE:48
     def editChange(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "service/change/edit")
@@ -48,19 +48,25 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "service/items/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("id", id)))
     }
   
-    // @LINE:26
+    // @LINE:28
     def items(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "service/items")
     }
   
-    // @LINE:46
+    // @LINE:42
     def deleteItem(id:Long): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "service/items/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("id", id)) + "/delete")
     }
   
-    // @LINE:42
+    // @LINE:53
+    def sales(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "service/sales")
+    }
+  
+    // @LINE:50
     def updateChange(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "service/change")
@@ -72,7 +78,7 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "service/items/new")
     }
   
-    // @LINE:23
+    // @LINE:25
     def index(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "service")
@@ -103,6 +109,12 @@ package controllers {
     def insertDollar(id:Long, itemId:Long): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "sale/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("id", id)) + "/item/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("itemId", itemId)) + "/dollar")
+    }
+  
+    // @LINE:22
+    def deleteSale(id:Long): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "sale/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("id", id)) + "/item/delete")
     }
   
     // @LINE:8
@@ -137,14 +149,14 @@ package controllers {
   
   }
 
-  // @LINE:50
+  // @LINE:56
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:50
+    // @LINE:56
     def versioned(file:Asset): Call = {
       implicit lazy val _rrc = new play.core.routing.ReverseRouteContext(Map(("path", "/public"))); _rrc
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[play.api.mvc.PathBindable[Asset]].unbind("file", file))
