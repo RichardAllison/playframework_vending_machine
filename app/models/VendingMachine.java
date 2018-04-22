@@ -81,7 +81,7 @@ public class VendingMachine extends Model {
         total = total.add(new BigDecimal(this.quarters, mc).multiply(quarterValue));
         total = total.add(new BigDecimal(this.dollars, mc).multiply(dollarValue));
 
-        return total;
+        return total.setScale(2);
     }
 
     public List<VendingItem> getVendingItems() {

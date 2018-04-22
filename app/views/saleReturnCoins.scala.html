@@ -1,7 +1,7 @@
 @(sale: Sale, item: VendingItem, coinsReturned: java.util.HashMap[String, Integer])
 
 @main("Return Coins") {
-    <h3>Coins Returned:</h3>
+    <h2>Coins Returned:</h2>
     <dl>
         <div><dt>Dollars: @coinsReturned.get("Dollars") </dt><dd id="dollars-display"></dd></div>
         <div><dt>Quarters: @coinsReturned.get("Quarters") </dt><dd id="dollars-display"></dd></div>

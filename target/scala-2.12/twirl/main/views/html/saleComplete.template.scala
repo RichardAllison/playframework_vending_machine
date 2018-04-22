@@ -33,7 +33,7 @@ object saleComplete extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.a
 Seq[Any](format.raw/*1.33*/("""
 
 """),_display_(/*3.2*/main("Sale Complete")/*3.23*/ {_display_(Seq[Any](format.raw/*3.25*/("""
-    """),format.raw/*4.5*/("""<h3>Purchase complete</h3>
+    """),format.raw/*4.5*/("""<h2>Purchase complete</h2>
     <dl>
         <div><dt>"""),_display_(/*6.19*/item/*6.23*/.getName()),format.raw/*6.33*/("""</dt><dd id="item-display"></dd></div>
         <div><dt>Price: $"""),_display_(/*7.27*/item/*7.31*/.getPrice()),format.raw/*7.42*/("""</dt><dd id="due-display"></dd></div>
@@ -56,9 +56,9 @@ Seq[Any](format.raw/*1.33*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sat Apr 21 22:20:09 GMT 2018
+                  DATE: Sun Apr 22 21:14:16 GMT 2018
                   SOURCE: /mnt/c/Users/Richard/Desktop/vendingmachine/vendingmachine/app/views/saleComplete.scala.html
-                  HASH: aacb59770456a241ba4a6b2babd2a7d92fc740f7
+                  HASH: b1c70ac4903faba7efc1b8a6bd5f584ed3a70b7f
                   MATRIX: 965->1|1091->32|1121->37|1150->58|1189->60|1221->66|1303->122|1315->126|1345->136|1437->202|1449->206|1480->217|1570->281|1582->285|1616->299
                   LINES: 28->1|33->1|35->3|35->3|35->3|36->4|38->6|38->6|38->6|39->7|39->7|39->7|40->8|40->8|40->8
                   -- GENERATED --

@@ -33,43 +33,44 @@ object sale extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlF
 Seq[Any](format.raw/*1.33*/("""
 
 """),_display_(/*3.2*/main("Ongoing Sale")/*3.22*/ {_display_(Seq[Any](format.raw/*3.24*/("""
-    """),format.raw/*4.5*/("""<dl>
-        <div><dt>Item: """),_display_(/*5.25*/item/*5.29*/.getName()),format.raw/*5.39*/(""" """),format.raw/*5.40*/("""- $"""),_display_(/*5.44*/item/*5.48*/.getPrice()),format.raw/*5.59*/("""</dt><dd id="item-display"></dd></div>
-        <div><dt>Money due: $"""),_display_(/*6.31*/sale/*6.35*/.amountDue()),format.raw/*6.47*/("""</dt><dd id="due-display"></dd></div>
-        <div><dt>Paid: $"""),_display_(/*7.26*/sale/*7.30*/.amountTotal()),format.raw/*7.44*/("""</dt><dd id="paid-display"></dd></div>
+    """),format.raw/*4.5*/("""<h2>Purchase Item</h2>
+    <dl>
+        <div><dt>Item: """),_display_(/*6.25*/item/*6.29*/.getName()),format.raw/*6.39*/(""" """),format.raw/*6.40*/("""- $"""),_display_(/*6.44*/item/*6.48*/.getPrice()),format.raw/*6.59*/("""</dt><dd id="item-display"></dd></div>
+        <div><dt>Money due: $"""),_display_(/*7.31*/sale/*7.35*/.amountDue()),format.raw/*7.47*/("""</dt><dd id="due-display"></dd></div>
+        <div><dt>Paid: $"""),_display_(/*8.26*/sale/*8.30*/.amountTotal()),format.raw/*8.44*/("""</dt><dd id="paid-display"></dd></div>
     </dl>
 
     <p>Insert coin:</p>
     <table>
         <tr>
             <td>
-                """),_display_(/*14.18*/helper/*14.24*/.form(action = routes.HomeController.insertNickel(sale.getId, item.getId), 'id -> "select_coin_form")/*14.125*/ {_display_(Seq[Any](format.raw/*14.127*/("""
-                    """),format.raw/*15.21*/("""<input type="submit" name="nickels" value="Nickels" id="nickel">
-                """)))}),format.raw/*16.18*/("""
-            """),format.raw/*17.13*/("""</td>
+                """),_display_(/*15.18*/helper/*15.24*/.form(action = routes.HomeController.insertNickel(sale.getId, item.getId), 'id -> "select_coin_form")/*15.125*/ {_display_(Seq[Any](format.raw/*15.127*/("""
+                    """),format.raw/*16.21*/("""<input type="submit" name="nickels" value="Nickels" id="nickel">
+                """)))}),format.raw/*17.18*/("""
+            """),format.raw/*18.13*/("""</td>
             <td>
-                """),_display_(/*19.18*/helper/*19.24*/.form(action = routes.HomeController.insertDime(sale.getId, item.getId), 'id -> "select_coin_form")/*19.123*/ {_display_(Seq[Any](format.raw/*19.125*/("""
-                    """),format.raw/*20.21*/("""<input type="submit" name="dimes" value="Dimes" id="dime">
-                """)))}),format.raw/*21.18*/("""
-            """),format.raw/*22.13*/("""</td>
+                """),_display_(/*20.18*/helper/*20.24*/.form(action = routes.HomeController.insertDime(sale.getId, item.getId), 'id -> "select_coin_form")/*20.123*/ {_display_(Seq[Any](format.raw/*20.125*/("""
+                    """),format.raw/*21.21*/("""<input type="submit" name="dimes" value="Dimes" id="dime">
+                """)))}),format.raw/*22.18*/("""
+            """),format.raw/*23.13*/("""</td>
             <td>
-                """),_display_(/*24.18*/helper/*24.24*/.form(action = routes.HomeController.insertQuarter(sale.getId, item.getId), 'id -> "select_coin_form")/*24.126*/ {_display_(Seq[Any](format.raw/*24.128*/("""
-                    """),format.raw/*25.21*/("""<input type="submit" name="quarters" value="Quarters" id="quarter">
-                """)))}),format.raw/*26.18*/("""
-            """),format.raw/*27.13*/("""</td>
+                """),_display_(/*25.18*/helper/*25.24*/.form(action = routes.HomeController.insertQuarter(sale.getId, item.getId), 'id -> "select_coin_form")/*25.126*/ {_display_(Seq[Any](format.raw/*25.128*/("""
+                    """),format.raw/*26.21*/("""<input type="submit" name="quarters" value="Quarters" id="quarter">
+                """)))}),format.raw/*27.18*/("""
+            """),format.raw/*28.13*/("""</td>
             <td>
-                """),_display_(/*29.18*/helper/*29.24*/.form(action = routes.HomeController.insertDollar(sale.getId, item.getId), 'id -> "select_coin_form")/*29.125*/ {_display_(Seq[Any](format.raw/*29.127*/("""
-                    """),format.raw/*30.21*/("""<input type="submit" name="dollars" value="Dollars" id="dollar">
-                """)))}),format.raw/*31.18*/("""
-            """),format.raw/*32.13*/("""</td>
+                """),_display_(/*30.18*/helper/*30.24*/.form(action = routes.HomeController.insertDollar(sale.getId, item.getId), 'id -> "select_coin_form")/*30.125*/ {_display_(Seq[Any](format.raw/*30.127*/("""
+                    """),format.raw/*31.21*/("""<input type="submit" name="dollars" value="Dollars" id="dollar">
+                """)))}),format.raw/*32.18*/("""
+            """),format.raw/*33.13*/("""</td>
         </tr>
     </table>
-    """),_display_(/*35.6*/helper/*35.12*/.form(action = routes.HomeController.returnCoins(sale.getId, item.getId), 'id -> "return_coin_form")/*35.112*/ {_display_(Seq[Any](format.raw/*35.114*/("""
-        """),format.raw/*36.9*/("""<input type="submit" value="Return Coins">
-    """)))}),format.raw/*37.6*/("""
-    """),_display_(/*38.6*/helper/*38.12*/.form(action = routes.HomeController.deleteSale(sale.getId), 'id -> "return_coin_form")/*38.99*/ {_display_(Seq[Any](format.raw/*38.101*/("""
-        """),format.raw/*39.9*/("""<input type="submit" value="Cancel">
-    """)))}),format.raw/*40.6*/("""
+    """),_display_(/*36.6*/helper/*36.12*/.form(action = routes.HomeController.returnCoins(sale.getId, item.getId), 'id -> "return_coin_form")/*36.112*/ {_display_(Seq[Any](format.raw/*36.114*/("""
+        """),format.raw/*37.9*/("""<input type="submit" value="Return Coins">
+    """)))}),format.raw/*38.6*/("""
+    """),_display_(/*39.6*/helper/*39.12*/.form(action = routes.HomeController.deleteSale(sale.getId), 'id -> "return_coin_form")/*39.99*/ {_display_(Seq[Any](format.raw/*39.101*/("""
+        """),format.raw/*40.9*/("""<input type="submit" value="Cancel">
+    """)))}),format.raw/*41.6*/("""
 """)))}))
       }
     }
@@ -86,11 +87,11 @@ Seq[Any](format.raw/*1.33*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sat Apr 21 22:20:08 GMT 2018
+                  DATE: Sun Apr 22 21:14:16 GMT 2018
                   SOURCE: /mnt/c/Users/Richard/Desktop/vendingmachine/vendingmachine/app/views/sale.scala.html
-                  HASH: 1e820181abd85a923a971aa11c4e3df6a7321a8f
-                  MATRIX: 957->1|1083->32|1113->37|1141->57|1180->59|1212->65|1268->95|1280->99|1310->109|1338->110|1368->114|1380->118|1411->129|1507->199|1519->203|1551->215|1641->279|1653->283|1687->297|1854->437|1869->443|1980->544|2021->546|2071->568|2185->651|2227->665|2296->707|2311->713|2420->812|2461->814|2511->836|2619->913|2661->927|2730->969|2745->975|2857->1077|2898->1079|2948->1101|3065->1187|3107->1201|3176->1243|3191->1249|3302->1350|3343->1352|3393->1374|3507->1457|3549->1471|3616->1512|3631->1518|3741->1618|3782->1620|3819->1630|3898->1679|3931->1686|3946->1692|4042->1779|4083->1781|4120->1791|4193->1834
-                  LINES: 28->1|33->1|35->3|35->3|35->3|36->4|37->5|37->5|37->5|37->5|37->5|37->5|37->5|38->6|38->6|38->6|39->7|39->7|39->7|46->14|46->14|46->14|46->14|47->15|48->16|49->17|51->19|51->19|51->19|51->19|52->20|53->21|54->22|56->24|56->24|56->24|56->24|57->25|58->26|59->27|61->29|61->29|61->29|61->29|62->30|63->31|64->32|67->35|67->35|67->35|67->35|68->36|69->37|70->38|70->38|70->38|70->38|71->39|72->40
+                  HASH: 6efecc8ce698ceb2a6c7940c00884af7015c3aca
+                  MATRIX: 957->1|1083->32|1113->37|1141->57|1180->59|1212->65|1296->123|1308->127|1338->137|1366->138|1396->142|1408->146|1439->157|1535->227|1547->231|1579->243|1669->307|1681->311|1715->325|1882->465|1897->471|2008->572|2049->574|2099->596|2213->679|2255->693|2324->735|2339->741|2448->840|2489->842|2539->864|2647->941|2689->955|2758->997|2773->1003|2885->1105|2926->1107|2976->1129|3093->1215|3135->1229|3204->1271|3219->1277|3330->1378|3371->1380|3421->1402|3535->1485|3577->1499|3644->1540|3659->1546|3769->1646|3810->1648|3847->1658|3926->1707|3959->1714|3974->1720|4070->1807|4111->1809|4148->1819|4221->1862
+                  LINES: 28->1|33->1|35->3|35->3|35->3|36->4|38->6|38->6|38->6|38->6|38->6|38->6|38->6|39->7|39->7|39->7|40->8|40->8|40->8|47->15|47->15|47->15|47->15|48->16|49->17|50->18|52->20|52->20|52->20|52->20|53->21|54->22|55->23|57->25|57->25|57->25|57->25|58->26|59->27|60->28|62->30|62->30|62->30|62->30|63->31|64->32|65->33|68->36|68->36|68->36|68->36|69->37|70->38|71->39|71->39|71->39|71->39|72->40|73->41
                   -- GENERATED --
               */
           

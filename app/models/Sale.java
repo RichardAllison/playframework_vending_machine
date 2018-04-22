@@ -8,6 +8,7 @@ import play.data.format.*;
 import play.data.validation.*;
 
 import java.math.MathContext;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Entity
@@ -33,6 +34,11 @@ public class Sale extends Model {
 
     public Date getTime() {
         return time;
+    }
+
+    public String getFormattedTime() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy.MM.dd HH:mm");
+        return dateFormat.format(this.time);
     }
 
     public void setTime(Date time) {
@@ -116,7 +122,15 @@ public class Sale extends Model {
     }
 
     public boolean isComplete() {
-        return complete;
+        return this.complete;
+    }
+
+    public String getCompleteStatus() {
+        if (this.complete == true) {
+            return "Complete";
+        } else {
+            return "Incomplete";
+        }
     }
 
     public void setComplete(boolean complete) {

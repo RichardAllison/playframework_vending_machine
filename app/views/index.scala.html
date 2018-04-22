@@ -1,9 +1,9 @@
 @(items: java.util.List[VendingItem])
 
 @main("Vending Machine") {
-    <h1>Vending Machine</h1>
+
     @if(items.isEmpty) {
-        <h3>Out of stock!</h3>
+        <p>Sorry, the machine is out of stock!</p>
     } else {
         <p>Select item:</p>
         @helper.form(action = routes.HomeController.newSale(), 'id -> "select_item_form") {

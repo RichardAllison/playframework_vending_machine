@@ -3,7 +3,7 @@
 @import play.data.Form
 
 @main("Edit Vending Machine Change") {
-
+    <h2>Edit Vending Machine Change</h2>
     @helper.form(action = routes.ServiceController.updateChange(), 'id -> "item_form") {
 
         @helper.inputText(form("nickels"), '_id -> "nickels", '_label -> "Nickels:")

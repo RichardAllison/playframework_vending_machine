@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/mnt/c/Users/Richard/Desktop/vendingmachine/vendingmachine/conf/routes
-// @DATE:Sun Apr 22 13:48:57 GMT 2018
+// @DATE:Sun Apr 22 21:08:15 GMT 2018
 
 package controllers;
 

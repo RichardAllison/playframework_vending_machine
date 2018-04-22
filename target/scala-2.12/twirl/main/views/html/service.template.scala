@@ -33,7 +33,7 @@ object service extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.Ht
 Seq[Any](format.raw/*1.4*/("""
 
 """),_display_(/*3.2*/main("Service Vending Machine")/*3.33*/ {_display_(Seq[Any](format.raw/*3.35*/("""
-    """),format.raw/*4.5*/("""<h1>Service</h1>
+    """),format.raw/*4.5*/("""<h2>Service</h2>
 
     <a class="button" href="service/items">Items</a>
     <a class="button" href="service/change">Change</a>
@@ -55,9 +55,9 @@ Seq[Any](format.raw/*1.4*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sat Apr 21 22:20:10 GMT 2018
+                  DATE: Sun Apr 22 21:14:16 GMT 2018
                   SOURCE: /mnt/c/Users/Richard/Desktop/vendingmachine/vendingmachine/app/views/service.scala.html
-                  HASH: 277f042cb095c9a7682cc288bc32dce34d2d59bd
+                  HASH: 340811a91192abb9aa8358a2a2faa40116934707
                   MATRIX: 943->1|1039->3|1069->8|1108->39|1147->41|1179->47
                   LINES: 28->1|33->1|35->3|35->3|35->3|36->4
                   -- GENERATED --

@@ -3,6 +3,7 @@
 @import play.data.Form
 
 @main("New Vending Item") {
+    <h2>Add New Item</h2>
 
     @helper.form(action = routes.ServiceController.saveItem(), 'id -> "item_form") {
 

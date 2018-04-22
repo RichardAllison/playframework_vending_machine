@@ -33,8 +33,9 @@ object sales extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.Html
 Seq[Any](format.raw/*1.31*/("""
 
 """),_display_(/*3.2*/main("Vending Machine Sales")/*3.31*/ {_display_(Seq[Any](format.raw/*3.33*/("""
+    """),format.raw/*4.5*/("""<h2>Sales</h2>
 
-    """),format.raw/*5.5*/("""<table id='items_list' class="table">
+    <table id='items_list' class="table">
 
         <thead>
             <tr class="table">
@@ -47,23 +48,23 @@ Seq[Any](format.raw/*1.31*/("""
             </tr>
         </thead>
         <tbody>
-            """),_display_(/*18.14*/for(sale <- sales) yield /*18.32*/ {_display_(Seq[Any](format.raw/*18.34*/("""
-                """),format.raw/*19.17*/("""<tr>
-                    <td>"""),_display_(/*20.26*/sale/*20.30*/.getTime()),format.raw/*20.40*/("""</td>
-                    <td>"""),_display_(/*21.26*/sale/*21.30*/.getItem()),format.raw/*21.40*/("""</td>
-                    <td>"""),_display_(/*22.26*/sale/*22.30*/.getItem().getPrice()),format.raw/*22.51*/("""</td>
-                    <td>$"""),_display_(/*23.27*/sale/*23.31*/.amountTotal()),format.raw/*23.45*/("""</td>
-                    <td>"""),_display_(/*24.26*/sale/*24.30*/.isComplete()),format.raw/*24.43*/("""</td>
+            """),_display_(/*19.14*/for(sale <- sales) yield /*19.32*/ {_display_(Seq[Any](format.raw/*19.34*/("""
+                """),format.raw/*20.17*/("""<tr>
+                    <td>"""),_display_(/*21.26*/sale/*21.30*/.getFormattedTime()),format.raw/*21.49*/("""</td>
+                    <td>"""),_display_(/*22.26*/sale/*22.30*/.getItem().getName()),format.raw/*22.50*/("""</td>
+                    <td>$"""),_display_(/*23.27*/sale/*23.31*/.getItem().getPrice()),format.raw/*23.52*/("""</td>
+                    <td>$"""),_display_(/*24.27*/sale/*24.31*/.amountTotal()),format.raw/*24.45*/("""</td>
+                    <td>"""),_display_(/*25.26*/sale/*25.30*/.getCompleteStatus()),format.raw/*25.50*/("""</td>
                     <td>
                         <form action="/sale/:id/item/delete" method="POST">
                             <input type="submit" value="Delete">
                         </form>
                     </td>
                 </tr>
-            """)))}),format.raw/*31.14*/("""
-        """),format.raw/*32.9*/("""</tbody>
+            """)))}),format.raw/*32.14*/("""
+        """),format.raw/*33.9*/("""</tbody>
     </table>
-""")))}),format.raw/*34.2*/("""
+""")))}),format.raw/*35.2*/("""
 """))
       }
     }
@@ -80,11 +81,11 @@ Seq[Any](format.raw/*1.31*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sun Apr 22 14:55:05 GMT 2018
+                  DATE: Sun Apr 22 21:14:16 GMT 2018
                   SOURCE: /mnt/c/Users/Richard/Desktop/vendingmachine/vendingmachine/app/views/sales.scala.html
-                  HASH: 6e90c1d48852087c7024cb7a8ce2f0576cae6a6a
-                  MATRIX: 962->1|1086->30|1116->35|1153->64|1192->66|1226->74|1603->424|1637->442|1677->444|1723->462|1781->493|1794->497|1825->507|1884->539|1897->543|1928->553|1987->585|2000->589|2042->610|2102->643|2115->647|2150->661|2209->693|2222->697|2256->710|2559->982|2596->992|2651->1017
-                  LINES: 28->1|33->1|35->3|35->3|35->3|37->5|50->18|50->18|50->18|51->19|52->20|52->20|52->20|53->21|53->21|53->21|54->22|54->22|54->22|55->23|55->23|55->23|56->24|56->24|56->24|63->31|64->32|66->34
+                  HASH: 645e6ef1c83159d61ec18ac080b8855f949cdd3b
+                  MATRIX: 962->1|1086->30|1116->35|1153->64|1192->66|1224->72|1623->444|1657->462|1697->464|1743->482|1801->513|1814->517|1854->536|1913->568|1926->572|1967->592|2027->625|2040->629|2082->650|2142->683|2155->687|2190->701|2249->733|2262->737|2303->757|2606->1029|2643->1039|2698->1064
+                  LINES: 28->1|33->1|35->3|35->3|35->3|36->4|51->19|51->19|51->19|52->20|53->21|53->21|53->21|54->22|54->22|54->22|55->23|55->23|55->23|56->24|56->24|56->24|57->25|57->25|57->25|64->32|65->33|67->35
                   -- GENERATED --
               */
           

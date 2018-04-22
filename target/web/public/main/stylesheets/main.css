@@ -16,34 +16,38 @@ nav {
 }
 
 nav li {
-  display: inline-block;
-  float: left;
+    display: inline-block;
+    float: left;
 }
 
 nav li a {
-  display: block;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  padding: 20px;
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 20px;
 }
 
 .main-content {
+    max-height: 83%;
+    min-height: 88vh;
+    width: 90%;
+    margin: auto;
     padding-top: 70px;
 }
 
 nav li a:hover {
-  background-color: #0074D9;
-  color: white;
+    background-color: #0074D9;
+    color: white;
 }
 
 footer {
-  height: 40px;
-  padding: 50px;
-  font-family: sans-serif;
-  font-size: 14px;
-  color: #AAA;
-  text-align: center;
+    height: 40px;
+    padding: 50px;
+    font-family: sans-serif;
+    font-size: 14px;
+    color: #AAA;
+    text-align: center;
 }
 
 label {
@@ -52,6 +56,14 @@ label {
 
 label:hover {
    background-color: rgb(224, 230, 232);
+}
+
+.table {
+    width: 50%;
+}
+
+.table th {
+    text-align: left;
 }
 
 .button {
@@ -69,35 +81,15 @@ label:hover {
 	text-decoration: none;
 	text-shadow: -1px 1px 0px #ffffff;
 }
+
 .button:hover {
 	background: linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
 	background-color: #f6f6f6;
 }
+
 .button:active {
 	position: relative;
 	top: 1px;
 }
 
-/*.item-select {
-    display: none;
-}*/
 
-input[type="radio"]:checked+label {
-    font-weight: bold;
-    background-color: #f6f6f6;
- }
-
-.main-content {
-  max-height: 83%;
-  min-height: 88vh;
-  width: 90%;
-  margin: auto;
-}
-
-table {
-    width: 50%;
-}
-
-table th {
-    text-align: left;
-}

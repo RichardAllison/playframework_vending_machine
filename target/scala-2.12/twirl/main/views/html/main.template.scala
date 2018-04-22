@@ -54,10 +54,11 @@ Seq[Any](format.raw/*7.32*/("""
     </ul>
 </nav>
 <div class="main-content">
-    """),format.raw/*27.27*/("""
-    """),_display_(/*28.6*/content),format.raw/*28.13*/("""
-"""),format.raw/*29.1*/("""</div>
-<script src=""""),_display_(/*30.15*/routes/*30.21*/.Assets.versioned("javascripts/main.js")),format.raw/*30.61*/("""" type="text/javascript"></script>
+    <h1>Vending Machine</h1>
+    """),format.raw/*28.27*/("""
+    """),_display_(/*29.6*/content),format.raw/*29.13*/("""
+"""),format.raw/*30.1*/("""</div>
+<script src=""""),_display_(/*31.15*/routes/*31.21*/.Assets.versioned("javascripts/main.js")),format.raw/*31.61*/("""" type="text/javascript"></script>
         <footer>
             <p>&copy; Richard Allison 2018. All rights reserved.</p>
         </footer>
@@ -79,11 +80,11 @@ Seq[Any](format.raw/*7.32*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sun Apr 22 13:48:58 GMT 2018
+                  DATE: Sun Apr 22 21:14:16 GMT 2018
                   SOURCE: /mnt/c/Users/Richard/Desktop/vendingmachine/vendingmachine/app/views/main.scala.html
-                  HASH: 9f07ad8e0ede308975883c50882ce4ccc29b9d41
-                  MATRIX: 1206->261|1331->291|1361->295|1467->426|1500->432|1535->440|1561->445|1647->504|1662->510|1724->551|1809->609|1824->615|1885->654|2090->917|2123->924|2151->931|2180->933|2229->955|2244->961|2305->1001
-                  LINES: 33->7|38->7|40->9|44->13|45->14|45->14|45->14|46->15|46->15|46->15|47->16|47->16|47->16|57->27|58->28|58->28|59->29|60->30|60->30|60->30
+                  HASH: 8fa9036a2e0fb2f9bc6121499e650b327399de54
+                  MATRIX: 1206->261|1331->291|1361->295|1467->426|1500->432|1535->440|1561->445|1647->504|1662->510|1724->551|1809->609|1824->615|1885->654|2120->947|2153->954|2181->961|2210->963|2259->985|2274->991|2335->1031
+                  LINES: 33->7|38->7|40->9|44->13|45->14|45->14|45->14|46->15|46->15|46->15|47->16|47->16|47->16|58->28|59->29|59->29|60->30|61->31|61->31|61->31
                   -- GENERATED --
               */
           
