@@ -25,6 +25,7 @@ dependencies {
     play "com.typesafe.play:play-guice_$scalaVersion:$playVersion"
     play "com.typesafe.play:play-logback_$scalaVersion:$playVersion"
     play "com.typesafe.play:filters-helpers_$scalaVersion:$playVersion"
+    compile 'org.junit.jupiter:junit-jupiter-api'
 }
 
 repositories {

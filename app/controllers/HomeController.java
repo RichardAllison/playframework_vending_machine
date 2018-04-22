@@ -31,7 +31,7 @@ public class HomeController extends Controller {
     public Result newSale() {
         Form<Sale> itemForm = formFactory.form(Sale.class).bindFromRequest();
         Sale sale = itemForm.get();
-        VendingItem item = VendingItem.find.byId(Long.valueOf(sale.getItemId()));
+        VendingItem item = sale.getItem();
         if (item==null){
             List<VendingItem> items = VendingItem.find.all();
             return ok(views.html.index.render(items));

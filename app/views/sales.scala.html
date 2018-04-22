@@ -18,8 +18,8 @@
             @for(sale <- sales) {
                 <tr>
                     <td>@sale.getTime()</td>
-                    <td>getItem()</td>
-                    <td>getItem().getPrice()</td>
+                    <td>@sale.getItem()</td>
+                    <td>@sale.getItem().getPrice()</td>
                     <td>$@sale.amountTotal()</td>
                     <td>@sale.isComplete()</td>
                     <td>

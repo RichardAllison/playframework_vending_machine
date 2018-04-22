@@ -47,6 +47,10 @@ public class Sale extends Model {
         this.itemId = itemId;
     }
 
+    public VendingItem getItem() {
+        return VendingItem.find.byId(Long.valueOf(this.itemId));
+    }
+
     public BigDecimal getItemPrice() {
         return itemPrice;
     }

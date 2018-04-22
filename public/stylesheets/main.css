@@ -50,6 +50,10 @@ label {
     cursor: pointer;
 }
 
+label:hover {
+   background-color: rgb(224, 230, 232);
+}
+
 .button {
 	box-shadow: inset 1px 0px 0px 0px #ffffff;
 	background: linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
@@ -72,4 +76,28 @@ label {
 .button:active {
 	position: relative;
 	top: 1px;
+}
+
+/*.item-select {
+    display: none;
+}*/
+
+input[type="radio"]:checked+label {
+    font-weight: bold;
+    background-color: #f6f6f6;
+ }
+
+.main-content {
+  max-height: 83%;
+  min-height: 88vh;
+  width: 90%;
+  margin: auto;
+}
+
+table {
+    width: 50%;
+}
+
+table th {
+    text-align: left;
 }

@@ -47,7 +47,7 @@ public class ServiceController extends Controller {
             vendingMachine.save();
         }
         VendingItem item = itemForm.get();
-        item.addVendingMachine(vendingMachine);
+        item.setVendingMachine(vendingMachine);
         item.save();
         return items();
     }

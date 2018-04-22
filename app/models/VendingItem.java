@@ -59,7 +59,7 @@ public class VendingItem extends Model {
         return vendingMachine;
     }
 
-    public void addVendingMachine(VendingMachine vendingMachine) {
+    public void setVendingMachine(VendingMachine vendingMachine) {
         this.vendingMachine = vendingMachine;
     }
 }

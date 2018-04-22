@@ -11,8 +11,8 @@
                 <tbody>
                     @for(item <- items) {
                         <tr>
-                            <td><input type="radio" name="itemId" value=@item.getId id="item-@item.getId"></td>
-                            <td><label for="item-@item.getId">@item.getName - $@item.getPrice</label></td>
+                            <td><input type="radio" name="itemId" value=@item.getId id="item-@item.getId" class="item-select"></td>
+                            <td><label for="item-@item.getId">@item.getName - $@item.getPrice</td></label>
                         </tr>
                     }
                 </tbody>
