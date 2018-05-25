@@ -36,14 +36,41 @@ Seq[Any](format.raw/*1.56*/("""
 """),format.raw/*4.1*/("""
 """),_display_(/*5.2*/main("Edit Vending Item")/*5.27*/ {_display_(Seq[Any](format.raw/*5.29*/("""
     """),format.raw/*6.5*/("""<h2>Edit Vending Item</h2>
-    """),_display_(/*7.6*/helper/*7.12*/.form(action = routes.ServiceController.updateItem(id), 'id -> "item_form")/*7.87*/ {_display_(Seq[Any](format.raw/*7.89*/("""
+    <br>
+    """),_display_(/*8.6*/helper/*8.12*/.form(action = routes.ServiceController.updateItem(id), 'id -> "item_form")/*8.87*/ {_display_(Seq[Any](format.raw/*8.89*/("""
+    """),format.raw/*9.5*/("""<table>
+        <tr>
+            <td>
+                <label for="item-name">Name:</label>
+            </td>
+            <td>
+                <input type="text" id="item-name" name="name" value=""""),_display_(/*15.71*/item/*15.75*/.getName()),format.raw/*15.85*/("""">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="item-price">Price:</label>
+            </td>
+            <td>
+                <input type="number" id="item-price" name="price"  step="0.05" min="0.05" value=""""),_display_(/*23.99*/item/*23.103*/.getPrice()),format.raw/*23.114*/("""">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="item-quantity">Quantity:</label>
+            </td>
+            <td>
+                <input type="number" id="item-quantity" name="quantity" value=""""),_display_(/*31.81*/item/*31.85*/.getQuantity()),format.raw/*31.99*/("""">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" id="submit" name="submit" value="Update"/>
+            </td>
+        </tr>
 
-        """),_display_(/*9.10*/helper/*9.16*/.inputText(form("name"), '_id -> "name", '_label -> "Name:")),format.raw/*9.76*/("""
-        """),_display_(/*10.10*/helper/*10.16*/.inputText(form("price"), '_id -> "price", '_label -> "Price:")),format.raw/*10.79*/("""
-        """),_display_(/*11.10*/helper/*11.16*/.inputText(form("quantity"), '_id -> "quantity", '_label -> "Quantity:")),format.raw/*11.88*/("""
-
-        """),format.raw/*13.9*/("""<input type="submit" id="submit" name="submit" value="Update"/>
-    """)))}),format.raw/*14.6*/("""
+    </table>
+    """)))}),format.raw/*41.6*/("""
 
 """)))}))
       }
@@ -61,11 +88,11 @@ Seq[Any](format.raw/*1.56*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sun Apr 22 21:14:16 GMT 2018
-                  SOURCE: /mnt/c/Users/Richard/Desktop/vendingmachine/vendingmachine/app/views/editItem.scala.html
-                  HASH: 12ff5917edd7a8962456674b4f13c9db05720837
-                  MATRIX: 979->1|1106->60|1157->55|1187->83|1215->86|1248->111|1287->113|1319->119|1377->152|1391->158|1474->233|1513->235|1552->248|1566->254|1646->314|1684->325|1699->331|1783->394|1821->405|1836->411|1929->483|1968->495|2068->565
-                  LINES: 28->1|31->3|34->1|36->4|37->5|37->5|37->5|38->6|39->7|39->7|39->7|39->7|41->9|41->9|41->9|42->10|42->10|42->10|43->11|43->11|43->11|45->13|46->14
+                  DATE: Fri May 25 21:15:58 BST 2018
+                  SOURCE: /Users/richard/Documents/Coding/Projects/vending_machine/vending_machine/app/views/editItem.scala.html
+                  HASH: 534f4bc9ef87a42bf34173273b233e5189039419
+                  MATRIX: 979->1|1106->60|1157->55|1187->83|1215->86|1248->111|1287->113|1319->119|1387->162|1401->168|1484->243|1523->245|1555->251|1784->453|1797->457|1828->467|2116->728|2130->732|2163->743|2439->992|2452->996|2487->1010|2723->1216
+                  LINES: 28->1|31->3|34->1|36->4|37->5|37->5|37->5|38->6|40->8|40->8|40->8|40->8|41->9|47->15|47->15|47->15|55->23|55->23|55->23|63->31|63->31|63->31|73->41
                   -- GENERATED --
               */
           

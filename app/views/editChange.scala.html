@@ -6,12 +6,47 @@
     <h2>Edit Vending Machine Change</h2>
     @helper.form(action = routes.ServiceController.updateChange(), 'id -> "item_form") {
 
-        @helper.inputText(form("nickels"), '_id -> "nickels", '_label -> "Nickels:")
-        @helper.inputText(form("dimes"), '_id -> "dimes", '_label -> "Dimes:")
-        @helper.inputText(form("quarters"), '_id -> "quarters", '_label -> "Quarters:")
-        @helper.inputText(form("dollars"), '_id -> "dollars", '_label -> "Dollars:")
+        <table>
+            <tr>
+                <td>
+                    <label for="nickels">Nickels:</label>
+                </td>
+                <td>
+                    <input type="number" id="nickels" name="nickels" value="@vendingMachine.getNickels()">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="dimes">Dimes:</label>
+                </td>
+                <td>
+                    <input type="number" id="dimes" name="dimes" value="@vendingMachine.getDimes()">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="quarters">Quarters:</label>
+                </td>
+                <td>
+                    <input type="number" id="quarters" name="quarters" value="@vendingMachine.getQuarters()">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="dollars">Dollars:</label>
+                </td>
+                <td>
+                    <input type="number" id="dollars" name="dollars" value="@vendingMachine.getDollars()">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" id="submit" name="submit" value="Update"/>
+                </td>
+            </tr>
 
-        <input type="submit" id="submit" name="submit" value="Update"/>
+        </table>
+
     }
 
 }

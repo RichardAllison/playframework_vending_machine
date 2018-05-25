@@ -4,7 +4,7 @@
 		module="vendingmachine_2.12"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20180422134802"
+		publication="20180525173341"
 	>
 		<description>
 		vendingmachine

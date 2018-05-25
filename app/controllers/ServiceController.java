@@ -39,6 +39,13 @@ public class ServiceController extends Controller {
         if (itemForm.hasErrors()) {
             return badRequest(views.html.newItem.render(itemForm));
         }
+        VendingItem item = itemForm.get();
+        if (item.getPrice().compareTo(BigDecimal.valueOf(0)) < 0) {
+            return badRequest(views.html.newItem.render(itemForm));
+        }
+        if (item.getQuantity() < 0) {
+            return badRequest(views.html.newItem.render(itemForm));
+        }
 
         VendingMachine vendingMachine = VendingMachine.find.byId(1L);
         if (vendingMachine == null) {
@@ -46,7 +53,6 @@ public class ServiceController extends Controller {
             vendingMachine.setId(1);
             vendingMachine.save();
         }
-        VendingItem item = itemForm.get();
         item.setVendingMachine(vendingMachine);
         item.save();
         return items();
@@ -65,6 +71,13 @@ public class ServiceController extends Controller {
             return badRequest(views.html.editItem.render(id, item, itemForm));
         }
         VendingItem updatedItem = itemForm.get();
+        VendingItem item = itemForm.get();
+        if (updatedItem.getPrice().compareTo(BigDecimal.valueOf(0)) < 0) {
+            return badRequest(views.html.newItem.render(itemForm));
+        }
+        if (updatedItem.getQuantity() < 0) {
+            return badRequest(views.html.newItem.render(itemForm));
+        }
         updatedItem.setId(id);
         updatedItem.update();
         return items();
@@ -102,8 +115,11 @@ public class ServiceController extends Controller {
         }
         VendingMachine updatedVendingMachine = vendingMachineForm.get();
         updatedVendingMachine.setId(1L);
+        if (updatedVendingMachine.getDollars() < 0 || updatedVendingMachine.getQuarters() <0) {
+            return badRequest(views.html.editChange.render(updatedVendingMachine, vendingMachineForm));
+        }
         updatedVendingMachine.update();
-        return index();
+        return redirect("/service");
     }
 
     public Result sales() {

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/mnt/c/Users/Richard/Desktop/vendingmachine/vendingmachine/conf/routes
-// @DATE:Sun Apr 22 21:08:15 GMT 2018
+// @SOURCE:/Users/richard/Documents/Coding/Projects/vending_machine/vending_machine/conf/routes
+// @DATE:Fri May 25 17:47:24 BST 2018
 
 import play.api.routing.JavaScriptReverseRoute
 

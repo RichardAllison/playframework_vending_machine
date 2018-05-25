@@ -4,13 +4,40 @@
 
 @main("Edit Vending Item") {
     <h2>Edit Vending Item</h2>
+    <br>
     @helper.form(action = routes.ServiceController.updateItem(id), 'id -> "item_form") {
+    <table>
+        <tr>
+            <td>
+                <label for="item-name">Name:</label>
+            </td>
+            <td>
+                <input type="text" id="item-name" name="name" value="@item.getName()">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="item-price">Price:</label>
+            </td>
+            <td>
+                <input type="number" id="item-price" name="price"  step="0.05" min="0.05" value="@item.getPrice()">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="item-quantity">Quantity:</label>
+            </td>
+            <td>
+                <input type="number" id="item-quantity" name="quantity" value="@item.getQuantity()">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" id="submit" name="submit" value="Update"/>
+            </td>
+        </tr>
 
-        @helper.inputText(form("name"), '_id -> "name", '_label -> "Name:")
-        @helper.inputText(form("price"), '_id -> "price", '_label -> "Price:")
-        @helper.inputText(form("quantity"), '_id -> "quantity", '_label -> "Quantity:")
-
-        <input type="submit" id="submit" name="submit" value="Update"/>
+    </table>
     }
 
 }

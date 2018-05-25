@@ -24,27 +24,21 @@ import play.core.j.PlayFormsMagicForJava._
 
 object main extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template2[String,Html,play.twirl.api.HtmlFormat.Appendable] {
 
-  /*
-* This template is called from the `index` template. This template
-* handles the rendering of the page header and body tags. It takes
-* two arguments, a `String` for the title of the page and an `Html`
-* object to insert into the body of the page.
-*/
-  def apply/*7.2*/(title: String)(content: Html):play.twirl.api.HtmlFormat.Appendable = {
+  /**/
+  def apply/*1.2*/(title: String)(content: Html):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*7.32*/("""
+Seq[Any](format.raw/*1.32*/("""
 
-"""),format.raw/*9.1*/("""<!DOCTYPE html>
+"""),format.raw/*3.1*/("""<!DOCTYPE html>
 <html lang="en-gb">
 <head>
     <meta charset="utf-8">
-    """),format.raw/*13.58*/("""
-    """),format.raw/*14.5*/("""<title>"""),_display_(/*14.13*/title),format.raw/*14.18*/("""</title>
-    <link rel="stylesheet" media="screen" href=""""),_display_(/*15.50*/routes/*15.56*/.Assets.versioned("stylesheets/main.css")),format.raw/*15.97*/("""">
-    <link rel="shortcut icon" type="image/png" href=""""),_display_(/*16.55*/routes/*16.61*/.Assets.versioned("images/favicon.png")),format.raw/*16.100*/("""">
+    <title>"""),_display_(/*7.13*/title),format.raw/*7.18*/("""</title>
+    <link rel="stylesheet" media="screen" href=""""),_display_(/*8.50*/routes/*8.56*/.Assets.versioned("stylesheets/main.css")),format.raw/*8.97*/("""">
+    <link rel="shortcut icon" type="image/png" href=""""),_display_(/*9.55*/routes/*9.61*/.Assets.versioned("images/favicon.png")),format.raw/*9.100*/("""">
 </head>
 <body>
 <nav>
@@ -53,12 +47,11 @@ Seq[Any](format.raw/*7.32*/("""
         <li><a href="/service">Service</a></li>
     </ul>
 </nav>
-<div class="main-content">
+<div id="main-content">
     <h1>Vending Machine</h1>
-    """),format.raw/*28.27*/("""
-    """),_display_(/*29.6*/content),format.raw/*29.13*/("""
-"""),format.raw/*30.1*/("""</div>
-<script src=""""),_display_(/*31.15*/routes/*31.21*/.Assets.versioned("javascripts/main.js")),format.raw/*31.61*/("""" type="text/javascript"></script>
+    """),_display_(/*20.6*/content),format.raw/*20.13*/("""
+"""),format.raw/*21.1*/("""</div>
+<script src=""""),_display_(/*22.15*/routes/*22.21*/.Assets.versioned("javascripts/main.js")),format.raw/*22.61*/("""" type="text/javascript"></script>
         <footer>
             <p>&copy; Richard Allison 2018. All rights reserved.</p>
         </footer>
@@ -80,11 +73,11 @@ Seq[Any](format.raw/*7.32*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sun Apr 22 21:14:16 GMT 2018
-                  SOURCE: /mnt/c/Users/Richard/Desktop/vendingmachine/vendingmachine/app/views/main.scala.html
-                  HASH: 8fa9036a2e0fb2f9bc6121499e650b327399de54
-                  MATRIX: 1206->261|1331->291|1361->295|1467->426|1500->432|1535->440|1561->445|1647->504|1662->510|1724->551|1809->609|1824->615|1885->654|2120->947|2153->954|2181->961|2210->963|2259->985|2274->991|2335->1031
-                  LINES: 33->7|38->7|40->9|44->13|45->14|45->14|45->14|46->15|46->15|46->15|47->16|47->16|47->16|58->28|59->29|59->29|60->30|61->31|61->31|61->31
+                  DATE: Fri May 25 17:47:25 BST 2018
+                  SOURCE: /Users/richard/Documents/Coding/Projects/vending_machine/vending_machine/app/views/main.scala.html
+                  HASH: 05ff6f777a8e4e47b3a7c75e4ff2545b96828b07
+                  MATRIX: 952->1|1077->31|1107->35|1219->121|1244->126|1329->185|1343->191|1404->232|1488->290|1502->296|1562->335|1793->540|1821->547|1850->549|1899->571|1914->577|1975->617
+                  LINES: 28->1|33->1|35->3|39->7|39->7|40->8|40->8|40->8|41->9|41->9|41->9|52->20|52->20|53->21|54->22|54->22|54->22
                   -- GENERATED --
               */
           

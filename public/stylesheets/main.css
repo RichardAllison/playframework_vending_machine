@@ -6,6 +6,10 @@ body {
   font-family: sans-serif;
 }
 
+h2 {
+    padding-bottom: 10px;
+}
+
 nav {
     background-color: #222222;
     border-color: #080808;
@@ -28,7 +32,7 @@ nav li a {
     padding: 20px;
 }
 
-.main-content {
+#main-content {
     max-height: 83%;
     min-height: 88vh;
     width: 90%;

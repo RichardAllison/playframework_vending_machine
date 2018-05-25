@@ -127,9 +127,9 @@ public class Sale extends Model {
 
     public String getCompleteStatus() {
         if (this.complete == true) {
-            return "Complete";
+            return "Yes";
         } else {
-            return "Incomplete";
+            return "No";
         }
     }
 

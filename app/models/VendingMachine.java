@@ -9,13 +9,16 @@ import play.data.validation.*;
 import java.math.BigDecimal;
 import java.math.MathContext;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Entity
 public class VendingMachine extends Model {
 
     @Id
     private Long id;
+    private int pennies;
     private int nickels;
     private int dimes;
     private int quarters;
@@ -33,12 +36,36 @@ public class VendingMachine extends Model {
         this.id = id;
     }
 
+    public int getPennies() {
+        return this.pennies;
+    };
+
+    public void setPennies(int pennies) {
+        this.pennies = pennies;
+    }
+
+    public void incrementPennies() {
+        this.pennies += 1;
+    }
+
+    public void decrementPennies() {
+        this.pennies -= 1;
+    }
+
     public int getNickels() {
         return this.nickels;
     }
 
     public void setNickels(int nickels) {
         this.nickels = nickels;
+    }
+
+    public void incrementNickels() {
+        this.nickels += 1;
+    }
+
+    public void decrementNickels() {
+        this.nickels -= 1;
     }
 
     public int getDimes() {
@@ -49,6 +76,14 @@ public class VendingMachine extends Model {
         this.dimes = dimes;
     }
 
+    public void incrementDimes() {
+        this.dimes += 1;
+    }
+
+    public void decrementDimes() {
+        this.dimes -= 1;
+    }
+
     public int getQuarters() {
         return this.quarters;
     }
@@ -57,12 +92,28 @@ public class VendingMachine extends Model {
         this.quarters = quarters;
     }
 
+    public void incrementQuarters() {
+        this.quarters += 1;
+    }
+
+    public void decrementQuarters() {
+        this.quarters -= 1;
+    }
+
     public int getDollars() {
         return this.dollars;
     }
 
     public void setDollars(int dollars) {
         this.dollars = dollars;
+    }
+
+    public void incrementDollars() {
+        this.dollars += 1;
+    }
+
+    public void decrementDollars() {
+        this.dollars -= 1;
     }
 
     public BigDecimal calculateTotal() {
@@ -99,5 +150,44 @@ public class VendingMachine extends Model {
             item.setQuantity(newQuantity);
             item.save();
         }
+    }
+
+    public Map<String, Integer> getChange(BigDecimal price, BigDecimal cash) {
+        BigDecimal change = cash.subtract(price);
+
+        String[] moneyKeys = {"pennies", "nickels", "dimes", "quarters", "dollars"};
+        BigDecimal[] moneyValues = {BigDecimal.valueOf(0.01), BigDecimal.valueOf(0.05), BigDecimal.valueOf(0.10), BigDecimal.valueOf(0.25), BigDecimal.valueOf(1.00)};
+        int[] coinsInMachine = {this.pennies, this.nickels, this.dimes, this.quarters, this.dollars};
+
+        VendingMachine vendingMachine = VendingMachine.find.byId(this.id);
+        Map<String, Integer> returnedChange = new HashMap<>();
+        for (Integer j = moneyKeys.length-1; j >= 0; j--) {
+            int number = 0;
+            if (change.compareTo(moneyValues[j]) >= 0) {
+                while (coinsInMachine[j] > 0 && change.compareTo(moneyValues[j]) >= 0) {
+                    change = change.subtract(moneyValues[j]);
+                    coinsInMachine[j]--;
+                    number++;
+                    switch (moneyKeys[j]) {
+                        case "pennies": vendingMachine.decrementPennies();
+                            break;
+                        case "nickels": vendingMachine.decrementNickels();
+                            break;
+                        case "dimes": vendingMachine.decrementDimes();
+                            break;
+                        case "quarters": vendingMachine.decrementQuarters();
+                            break;
+                        case "dollars": vendingMachine.decrementDollars();
+                            break;
+                    }
+                }
+                vendingMachine.update();
+                if (number != 0) {
+                    returnedChange.put(moneyKeys[j], number);
+                }
+            }
+        }
+
+        return returnedChange;
     }
 }

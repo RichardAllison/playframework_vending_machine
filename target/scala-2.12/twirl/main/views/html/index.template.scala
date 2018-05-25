@@ -35,10 +35,10 @@ Seq[Any](format.raw/*1.38*/("""
 """),_display_(/*3.2*/main("Vending Machine")/*3.25*/ {_display_(Seq[Any](format.raw/*3.27*/("""
 
     """),_display_(/*5.6*/if(items.isEmpty)/*5.23*/ {_display_(Seq[Any](format.raw/*5.25*/("""
-        """),format.raw/*6.9*/("""<p>Sorry, the machine is out of stock!</p>
+        """),format.raw/*6.9*/("""<p id="description">Sorry, the machine is out of stock!</p>
     """)))}/*7.7*/else/*7.12*/{_display_(Seq[Any](format.raw/*7.13*/("""
-        """),format.raw/*8.9*/("""<p>Select item:</p>
-        """),_display_(/*9.10*/helper/*9.16*/.form(action = routes.HomeController.newSale(), 'id -> "select_item_form")/*9.90*/ {_display_(Seq[Any](format.raw/*9.92*/("""
+        """),format.raw/*8.9*/("""<p id="description">Select item:</p>
+        """),_display_(/*9.10*/helper/*9.16*/.form(action = routes.HomeController.newSale(), 'id -> "select-item-form")/*9.90*/ {_display_(Seq[Any](format.raw/*9.92*/("""
             """),format.raw/*10.13*/("""<table>
                 <tbody>
                     """),_display_(/*12.22*/for(item <- items) yield /*12.40*/ {_display_(Seq[Any](format.raw/*12.42*/("""
@@ -71,10 +71,10 @@ Seq[Any](format.raw/*1.38*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sun Apr 22 21:14:16 GMT 2018
-                  SOURCE: /mnt/c/Users/Richard/Desktop/vendingmachine/vendingmachine/app/views/index.scala.html
-                  HASH: 1bdd343ed411b44a82fcc42651ae61215273bc16
-                  MATRIX: 969->1|1100->37|1130->42|1161->65|1200->67|1234->76|1259->93|1298->95|1334->105|1400->155|1412->160|1450->161|1486->171|1542->201|1556->207|1638->281|1677->283|1719->297|1801->352|1835->370|1875->372|1929->398|2035->477|2048->481|2075->487|2104->488|2141->498|2154->502|2182->508|2288->587|2301->591|2328->597|2358->600|2371->604|2400->612|2429->613|2460->617|2473->621|2503->630|2601->697|2647->715|2899->936|2936->943|2969->946
+                  DATE: Fri May 25 17:47:25 BST 2018
+                  SOURCE: /Users/richard/Documents/Coding/Projects/vending_machine/vending_machine/app/views/index.scala.html
+                  HASH: d24aaeadbccd777be23a8097e52f543c18d7102e
+                  MATRIX: 969->1|1100->37|1130->42|1161->65|1200->67|1234->76|1259->93|1298->95|1334->105|1417->172|1429->177|1467->178|1503->188|1576->235|1590->241|1672->315|1711->317|1753->331|1835->386|1869->404|1909->406|1963->432|2069->511|2082->515|2109->521|2138->522|2175->532|2188->536|2216->542|2322->621|2335->625|2362->631|2392->634|2405->638|2434->646|2463->647|2494->651|2507->655|2537->664|2635->731|2681->749|2933->970|2970->977|3003->980
                   LINES: 28->1|33->1|35->3|35->3|35->3|37->5|37->5|37->5|38->6|39->7|39->7|39->7|40->8|41->9|41->9|41->9|41->9|42->10|44->12|44->12|44->12|45->13|46->14|46->14|46->14|46->14|46->14|46->14|46->14|47->15|47->15|47->15|47->15|47->15|47->15|47->15|47->15|47->15|47->15|49->17|50->18|55->23|56->24|57->25
                   -- GENERATED --
               */

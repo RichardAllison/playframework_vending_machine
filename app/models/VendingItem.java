@@ -44,7 +44,7 @@ public class VendingItem extends Model {
     }
 
     public BigDecimal getPrice() {
-        return this.price;
+        return this.price.setScale(2);
     }
 
     public void setQuantity(int quantity) {
@@ -62,4 +62,16 @@ public class VendingItem extends Model {
     public void setVendingMachine(VendingMachine vendingMachine) {
         this.vendingMachine = vendingMachine;
     }
+
+    public static List<VendingItem> getAvailableItems() {
+        List<VendingItem> allItems = find.all();
+        List<VendingItem> availableItems = new ArrayList<VendingItem>();
+        for (int i = 0; i < allItems.size(); i++) {
+            if (allItems.get(i).getQuantity() > 0) {
+                availableItems.add(allItems.get(i));
+            }
+        }
+        return availableItems;
+    }
+
 }

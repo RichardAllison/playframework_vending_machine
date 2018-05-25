@@ -6,14 +6,13 @@ import models.VendingMachine;
 import play.mvc.*;
 
 import java.math.BigDecimal;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 import javax.inject.Inject;
 import play.data.DynamicForm;
 import play.data.Form;
 import play.data.FormFactory;
-import play.api.libs.json.*;
+//import com.fasterxml.jackson.databind.JsonNode;
+//import play.libs.Json;
 
 public class HomeController extends Controller {
 
@@ -25,8 +24,8 @@ public class HomeController extends Controller {
     }
 
     public Result index() {
-        List<VendingItem> items = VendingItem.find.all();
-        return ok(views.html.index.render(items));
+        List<VendingItem> availableItems = VendingItem.getAvailableItems();
+        return ok(views.html.index.render(availableItems));
     }
 
     public Result newSale() {
@@ -46,11 +45,18 @@ public class HomeController extends Controller {
     public Result sale(long id, long itemId) {
         Sale sale = Sale.find.byId(id);
         VendingItem item = VendingItem.find.byId(itemId);
+        if (item.getQuantity() <= 0) {
+            return redirect("/");
+        }
         if (sale.amountDue().compareTo(BigDecimal.valueOf(0)) <= 0) {
             VendingMachine vendingMachine = VendingMachine.find.byId(1L);
             sale.setComplete(true);
             sale.save();
-            return ok(views.html.saleComplete.render(sale, item));
+            item.setQuantity(item.getQuantity() -1);
+            item.save();
+            Map<String, Integer> change = vendingMachine.getChange(item.getPrice(), sale.amountTotal());
+
+            return ok(views.html.saleComplete.render(sale, item, change));
         }
         return ok(views.html.sale.render(sale, item));
     }
@@ -163,5 +169,11 @@ public class HomeController extends Controller {
         }
         return index();
     }
+
+//    public Result items() {
+//        List<VendingItem> items = VendingItem.find.all();
+//        JsonNode itemsJson = Json.toJson(items);
+//        return ok(itemsJson);
+//    } // infinite recursion (stack overflow) error
 
 }

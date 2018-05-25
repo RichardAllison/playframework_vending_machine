@@ -1,4 +1,4 @@
-@(sale: Sale, item: VendingItem)
+@(sale: Sale, item: VendingItem, change: java.util.Map[String, Integer])
 
 @main("Sale Complete") {
     <h2>Purchase complete</h2>
@@ -6,6 +6,15 @@
         <div><dt>@item.getName()</dt><dd id="item-display"></dd></div>
         <div><dt>Price: $@item.getPrice()</dt><dd id="due-display"></dd></div>
         <div><dt>Paid: $@sale.amountTotal()</dt><dd id="paid-display"></dd></div>
+        <div><dt>
+            @if(!change.isEmpty()) {
+                Change: @for((k,v) <- change) {
+                    <dt>@v @k</dt>
+                }
+            } else {
+                <dt>Sorry, correct change is not available.</dt>
+            }
+        </dt></div>
     </dl>
 
 }

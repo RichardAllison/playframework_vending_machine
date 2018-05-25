@@ -60,8 +60,8 @@ Seq[Any](format.raw/*1.34*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sun Apr 22 21:14:16 GMT 2018
-                  SOURCE: /mnt/c/Users/Richard/Desktop/vendingmachine/vendingmachine/app/views/change.scala.html
+                  DATE: Fri May 25 17:47:25 BST 2018
+                  SOURCE: /Users/richard/Documents/Coding/Projects/vending_machine/vending_machine/app/views/change.scala.html
                   HASH: 7f7e4a9f1c1b7d841052103b39f0208234d148e7
                   MATRIX: 957->1|1084->33|1114->38|1152->68|1191->70|1225->78|1296->123|1318->137|1351->150|1398->171|1420->185|1451->196|1501->220|1523->234|1557->248|1606->271|1628->285|1661->298|1710->320|1733->334|1769->349|1886->436
                   LINES: 28->1|33->1|35->3|35->3|35->3|37->5|38->6|38->6|38->6|39->7|39->7|39->7|40->8|40->8|40->8|41->9|41->9|41->9|42->10|42->10|42->10|46->14

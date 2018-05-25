@@ -38,13 +38,48 @@ Seq[Any](format.raw/*1.62*/("""
     """),format.raw/*6.5*/("""<h2>Edit Vending Machine Change</h2>
     """),_display_(/*7.6*/helper/*7.12*/.form(action = routes.ServiceController.updateChange(), 'id -> "item_form")/*7.87*/ {_display_(Seq[Any](format.raw/*7.89*/("""
 
-        """),_display_(/*9.10*/helper/*9.16*/.inputText(form("nickels"), '_id -> "nickels", '_label -> "Nickels:")),format.raw/*9.85*/("""
-        """),_display_(/*10.10*/helper/*10.16*/.inputText(form("dimes"), '_id -> "dimes", '_label -> "Dimes:")),format.raw/*10.79*/("""
-        """),_display_(/*11.10*/helper/*11.16*/.inputText(form("quarters"), '_id -> "quarters", '_label -> "Quarters:")),format.raw/*11.88*/("""
-        """),_display_(/*12.10*/helper/*12.16*/.inputText(form("dollars"), '_id -> "dollars", '_label -> "Dollars:")),format.raw/*12.85*/("""
+        """),format.raw/*9.9*/("""<table>
+            <tr>
+                <td>
+                    <label for="nickels">Nickels:</label>
+                </td>
+                <td>
+                    <input type="number" id="nickels" name="nickels" value=""""),_display_(/*15.78*/vendingMachine/*15.92*/.getNickels()),format.raw/*15.105*/("""">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="dimes">Dimes:</label>
+                </td>
+                <td>
+                    <input type="number" id="dimes" name="dimes" value=""""),_display_(/*23.74*/vendingMachine/*23.88*/.getDimes()),format.raw/*23.99*/("""">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="quarters">Quarters:</label>
+                </td>
+                <td>
+                    <input type="number" id="quarters" name="quarters" value=""""),_display_(/*31.80*/vendingMachine/*31.94*/.getQuarters()),format.raw/*31.108*/("""">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="dollars">Dollars:</label>
+                </td>
+                <td>
+                    <input type="number" id="dollars" name="dollars" value=""""),_display_(/*39.78*/vendingMachine/*39.92*/.getDollars()),format.raw/*39.105*/("""">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" id="submit" name="submit" value="Update"/>
+                </td>
+            </tr>
 
-        """),format.raw/*14.9*/("""<input type="submit" id="submit" name="submit" value="Update"/>
-    """)))}),format.raw/*15.6*/("""
+        </table>
+
+    """)))}),format.raw/*50.6*/("""
 
 """)))}))
       }
@@ -62,11 +97,11 @@ Seq[Any](format.raw/*1.62*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sun Apr 22 21:14:16 GMT 2018
-                  SOURCE: /mnt/c/Users/Richard/Desktop/vendingmachine/vendingmachine/app/views/editChange.scala.html
-                  HASH: 0f6522964e1b8171616149f46a78648036cf2b16
-                  MATRIX: 982->1|1115->66|1166->61|1196->89|1224->92|1267->127|1306->129|1338->135|1406->178|1420->184|1503->259|1542->261|1581->274|1595->280|1684->349|1722->360|1737->366|1821->429|1859->440|1874->446|1967->518|2005->529|2020->535|2110->604|2149->616|2249->686
-                  LINES: 28->1|31->3|34->1|36->4|37->5|37->5|37->5|38->6|39->7|39->7|39->7|39->7|41->9|41->9|41->9|42->10|42->10|42->10|43->11|43->11|43->11|44->12|44->12|44->12|46->14|47->15
+                  DATE: Fri May 25 17:47:25 BST 2018
+                  SOURCE: /Users/richard/Documents/Coding/Projects/vending_machine/vending_machine/app/views/editChange.scala.html
+                  HASH: 3a7924ee61ef50ede449a6a050508b30329de043
+                  MATRIX: 982->1|1115->66|1166->61|1196->89|1224->92|1267->127|1306->129|1338->135|1406->178|1420->184|1503->259|1542->261|1580->273|1837->503|1860->517|1895->530|2181->789|2204->803|2236->814|2534->1085|2557->1099|2593->1113|2887->1380|2910->1394|2945->1407|3215->1647
+                  LINES: 28->1|31->3|34->1|36->4|37->5|37->5|37->5|38->6|39->7|39->7|39->7|39->7|41->9|47->15|47->15|47->15|55->23|55->23|55->23|63->31|63->31|63->31|71->39|71->39|71->39|82->50
                   -- GENERATED --
               */
           

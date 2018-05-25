@@ -28,6 +28,7 @@ create table vending_item (
 
 create table vending_machine (
   id                            integer not null,
+  pennies                       integer not null,
   nickels                       integer not null,
   dimes                         integer not null,
   quarters                      integer not null,

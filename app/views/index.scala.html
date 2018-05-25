@@ -3,10 +3,10 @@
 @main("Vending Machine") {
 
     @if(items.isEmpty) {
-        <p>Sorry, the machine is out of stock!</p>
+        <p id="description">Sorry, the machine is out of stock!</p>
     } else {
-        <p>Select item:</p>
-        @helper.form(action = routes.HomeController.newSale(), 'id -> "select_item_form") {
+        <p id="description">Select item:</p>
+        @helper.form(action = routes.HomeController.newSale(), 'id -> "select-item-form") {
             <table>
                 <tbody>
                     @for(item <- items) {
